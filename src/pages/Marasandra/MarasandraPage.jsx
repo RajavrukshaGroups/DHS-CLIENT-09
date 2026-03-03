@@ -92,55 +92,55 @@ const MarasandraPage = () => {
     "Third Installment 20%",
   ];
 
-  // const priceChartData = [
-  //   {
-  //     dimension: "30X40",
-  //     price: "1399/-",
-  //     total_amount: "16,78,800",
-  //     down_payment: "5,03,640",
-  //     first_installment: "5,03,640",
-  //     second_installment: "3,35,760",
-  //     third_installment: "3,35,760",
-  //   },
-  //   {
-  //     dimension: "30X50",
-  //     price: "1399/-",
-  //     total_amount: "20,98,500",
-  //     down_payment: "6,29,550",
-  //     first_installment: "6,29,550",
-  //     second_installment: "4,19,700",
-  //     third_installment: "4,19,700",
-  //   },
-  //   {
-  //     dimension: "40X60",
-  //     price: "1399/-",
-  //     total_amount: "33,57,600",
-  //     down_payment: "10,07,280",
-  //     first_installment: "10,07,280",
-  //     second_installment: "6,71,520",
-  //     third_installment: "6,71,520",
-  //   },
-  //   {
-  //     dimension: "50X80",
-  //     price: "1399/-",
-  //     total_amount: "55,96,000",
-  //     down_payment: "16,78,800",
-  //     first_installment: "16,78,800",
-  //     second_installment: "11,19,200",
-  //     third_installment: "11,19,200",
-  //   },
-  //   {
-  //     dimension: "100X120",
-  //     price: "1399/-",
-  //     total_amount: "1,67,88,000",
-  //     down_payment: "50,36,400",
-  //     first_installment: "50,36,400",
-  //     second_installment: "33,57,600",
-  //     third_installment: "33,57,600",
-  //   },
-  // ];
+  const oldPriceChartData = [
+    {
+      dimension: "30X40",
+      price: "1399/-",
+      total_amount: "16,78,800",
+      down_payment: "5,03,640",
+      first_installment: "5,03,640",
+      second_installment: "3,35,760",
+      third_installment: "3,35,760",
+    },
+    {
+      dimension: "30X50",
+      price: "1399/-",
+      total_amount: "20,98,500",
+      down_payment: "6,29,550",
+      first_installment: "6,29,550",
+      second_installment: "4,19,700",
+      third_installment: "4,19,700",
+    },
+    {
+      dimension: "40X60",
+      price: "1399/-",
+      total_amount: "33,57,600",
+      down_payment: "10,07,280",
+      first_installment: "10,07,280",
+      second_installment: "6,71,520",
+      third_installment: "6,71,520",
+    },
+    // {
+    //   dimension: "50X80",
+    //   price: "1399/-",
+    //   total_amount: "55,96,000",
+    //   down_payment: "16,78,800",
+    //   first_installment: "16,78,800",
+    //   second_installment: "11,19,200",
+    //   third_installment: "11,19,200",
+    // },
+    // {
+    //   dimension: "100X120",
+    //   price: "1399/-",
+    //   total_amount: "1,67,88,000",
+    //   down_payment: "50,36,400",
+    //   first_installment: "50,36,400",
+    //   second_installment: "33,57,600",
+    //   third_installment: "33,57,600",
+    // },
+  ];
 
-  const priceChartData = [
+  const newPriceChartData = [
     {
       dimension: "30X40",
       price: "1699/-",
@@ -227,7 +227,7 @@ const MarasandraPage = () => {
         </span>
         {/* <span>Change of land and conversion in progress.</span> */}
       </Marquee>
-      <div className="subintro">
+      <div className="subintro"  style={{ paddingLeft:"12px", paddingRight:"12px"}}>
         <p>
           "Introducing Defence Habitat Marasandra – your gateway to premier
           living in the burgeoning urban extension of North Bangalore. Our
@@ -251,8 +251,11 @@ const MarasandraPage = () => {
         }}
       >
         <PriceChart
+          // priceChartTableHeading={priceChartTableHeading}
+          // priceChartData={priceChartData}
           priceChartTableHeading={priceChartTableHeading}
-          priceChartData={priceChartData}
+          oldPriceChartData={oldPriceChartData}
+          newPriceChartData={newPriceChartData}
         />
         {/* Terms and Conditions Section */}
         <TermsAndConds />

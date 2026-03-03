@@ -8,7 +8,7 @@ import { faMapMarkerAlt, faClock, faPhone, faUser, faDesktop } from '@fortawesom
 const MainHeader = () => {
     return (
         <> 
-            <div className="header-top sticky">
+            <div className="header-top">
                 <div className="top-inner clearfix">
                     <div className="left-column pull-left">
                         <ul className="info clearfix">

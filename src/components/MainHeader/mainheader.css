@@ -1,5 +1,7 @@
 .header-top {
-    position: relative;
+     position: sticky !important;
+      top: 0;   /* height of your top header */
+  z-index: 1020;
     background: linear-gradient(105deg, #6e99e6, #093c94);
     height: 58px;
 }

@@ -26,7 +26,12 @@ function CustomNavbar() {
   }, []);
 
   return (
-    <Navbar id="navbar" sticky='top' variant="tabs" className="navbar-custom" expand="lg">
+  <Navbar
+  id="navbar"
+  variant="tabs"
+  className="navbar-custom custom-sticky"
+  expand="lg"
+>
       <Container>
         <Navbar.Brand href="/">
           <img src={logo} alt="Logo" className="navbar-logo main-logo" />

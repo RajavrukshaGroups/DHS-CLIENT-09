@@ -3,6 +3,12 @@
   font-size: 17px;
 }
 
+.custom-sticky {
+  position: sticky !important;
+  top: 58px;   /* height of your top header */
+  z-index: 1020;
+}
+
 .navbar-custom {
   background-color: #f8f9fa; /* Light grey background */
   height: auto; /* Adjust the height according to the content */

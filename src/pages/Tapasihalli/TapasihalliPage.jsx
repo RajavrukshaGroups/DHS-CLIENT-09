@@ -217,7 +217,7 @@ const TapasihalliPage = () => {
         </span>
       </Marquee>
 
-      <div className="subintro">
+      <div className="subintro" style={{ paddingLeft:"12px", paddingRight:"12px"}}>
         <p>
           "Introducing Defence Habitat Tapasihalli, an exceptional residential
           layout project located in the rapidly developing area of North

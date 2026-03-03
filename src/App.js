@@ -53,6 +53,7 @@ import ContactForm from "./pages/Tapasihalli/TapasihalliContact.jsx";
 import TermsAndConditions from "./pages/TermsAndCondtions.jsx";
  import CopyrightPolicy from "./pages/CopyrightPolicy.jsx";
 
+import TopHeader from "./components/TopHeader.js";
 
 function MainApp() {
   const location = useLocation();
@@ -65,8 +66,10 @@ function MainApp() {
 
   return (
     <>
+     
       <div className={isGoogleAdsRoute && !formSubmitted ? "app-blur" : ""}>
         <PopupAdminSelector />
+        {/* <TopHeader /> */}
         <HeaderSelector />
         <NavBarSelector />
         <Toaster
@@ -138,6 +141,7 @@ function MainApp() {
           <Route path="/copy-right-policy" element={<CopyrightPolicy />} />
           <Route path="*" element={<Error />} />
         </Routes>
+          
         <Footer />
         <ScrollToTopButton />
       </div>

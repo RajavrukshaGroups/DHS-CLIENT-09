@@ -373,41 +373,36 @@ const Home = () => {
       </Marquee> */}
 
       {/* Video Section */}
-      <section className="video-section">
-        <div className="auto-container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="sec-title">
-                <h2>Most Popular Places</h2>
-                <p>
-                  Our project is strategically located at North Bangalore, the
-                  Exclusive part of Bangalore where land value, investor
-                  sentiment, business opportunities and career respects – all
-                  are heading north!
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="video-box">
-                {/* <video controls className="mostvideo">
-                  <source src={Video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video> */}
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/060g2WazuXo?si=Huu6pEskdKxO9TH8"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
+     <section className="video-section">
+  <div className="container">
+    <div className="row align-items-center">
+      <div className="col-12 col-md-6 mb-4 mb-md-0">
+        <div className="sec-title">
+          <h2 style={{ marginBottom:"23px"}}>Most Popular Places</h2>
+          <p>
+            Our project is strategically located at North Bangalore, the
+            Exclusive part of Bangalore where land value, investor
+            sentiment, business opportunities and career respects – all
+            are heading north!
+          </p>
         </div>
-      </section>
+      </div>
+      <div className="col-12 col-md-6">
+        <div className="video-box" style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+          <iframe
+            src="https://www.youtube.com/embed/060g2WazuXo?si=Huu6pEskdKxO9TH8"
+            title="YouTube video player"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </>
   );
 };

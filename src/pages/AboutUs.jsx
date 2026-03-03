@@ -160,22 +160,33 @@ const AboutUs = () => {
               </div>
               {/* add here */}
 
-              <div className="col-lg-5 col-md-10 col-sm-12 image-column">
-                {/* <video controls type="video/mp4" src={aboutVideo} alt="about video"
-                  className="aboutvideo"
-
-                /> */}
+              <div className="col-lg-5 col-md-10 col-sm-12 mb-4 image-column">
+              <div
+                className="video-wrapper"
+                style={{
+                  position: "relative",
+                  paddingBottom: "56.25%", // 16:9 aspect ratio
+                  height: 0,
+                  overflow: "hidden",
+                }}
+              >
                 <iframe
-                  width="560"
-                  height="315"
                   src="https://www.youtube.com/embed/060g2WazuXo?si=Huu6pEskdKxO9TH8"
                   title="YouTube video player"
-                  frameborder="0"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
                 ></iframe>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -183,7 +194,7 @@ const AboutUs = () => {
 
       {/* mission and vision */}
       <section
-        className="feature-style-three centred pb-110"
+        className="feature-style-three centred "
         style={{ paddingTop: "0px", marginTop: "-7rem" }}
       >
         <div className="auto-container">
