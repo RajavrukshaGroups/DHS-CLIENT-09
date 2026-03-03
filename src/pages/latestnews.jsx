@@ -123,7 +123,6 @@ const LatestNews = () => {
       <Card className="property-card-latest shadow-none border-0">
         <Card.Body>
           <div className="latest-news-layout">
-            {/* LEFT SIDE */}
             <div className="latest-news-left">
               <h2 className="ct">Latest News</h2>
               <div className="title-divider"></div>
