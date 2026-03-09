@@ -3,15 +3,16 @@ src/videos/most.mp4
 src/videos.zip
 
 # dependencies
-/node_modules
-/.pnp
+node_modules/
+.pnp
 .pnp.js
 
 # testing
 /coverage
 
 # production
-/build
+build/
+dist/
 
 # misc
 .DS_Store
