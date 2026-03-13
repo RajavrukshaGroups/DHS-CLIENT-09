@@ -57,6 +57,8 @@ function CustomNavbar() {
               <NavDropdown.Item href="/projects/tapasihalli" className="dropdown-item-custom">Defence Habitat - Tapasihalli</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/projects/marasandra" className="dropdown-item-custom">Defence Habitat - Marasandra</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/projects/hassan" className="dropdown-item-custom">Defence Habitat - Hassan</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown
               title="Download"

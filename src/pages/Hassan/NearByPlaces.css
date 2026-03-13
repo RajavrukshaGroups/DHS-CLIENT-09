@@ -1,0 +1,40 @@
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.feature-icon {
+  color: #24457b;
+  margin-top: 4px;
+  min-width: 18px;
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+}
+
+.icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.icon {
+  color: #24457b;
+  margin-top: 4px;
+}
+
+.center-text {
+  text-align: center;
+}

@@ -13,6 +13,7 @@ import MemberFormWrapper from "./components/memberDetails/memberFormWrapper.jsx"
 import NewOnlineApplication from "./pages/newOnlineApplication.jsx";
 import TapasihalliPage from "./pages/Tapasihalli/TapasihalliPage";
 import MarasandraPage from "./pages/Marasandra/MarasandraPage";
+import HassanPage from "./pages/Hassan/HassanPage";
 import CustomNavbar from "./components/Header/header";
 import MainHeader from "./components/MainHeader/mainheader";
 import DownloadBrochure from "./pages/DownloadBrochure";
@@ -109,6 +110,7 @@ function MainApp() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/projects/tapasihalli" element={<TapasihalliPage />} />
           <Route path="/projects/marasandra" element={<MarasandraPage />} />
+          <Route path="/projects/hassan" element={<HassanPage/>}/>
           <Route path="/download/brochure" element={<DownloadBrochure />} />
           <Route
             path="/download/application"
