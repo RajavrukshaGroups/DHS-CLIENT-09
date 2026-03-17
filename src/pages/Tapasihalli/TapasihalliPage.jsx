@@ -106,37 +106,7 @@ const TapasihalliPage = () => {
   //   },
   // ];
 
-  const oldPriceChartData = [
-    {
-      dimension: "30X40",
-      price: "1099/-",
-      total_amount: "13,18,800",
-      down_payment: "3,95,640",
-      first_installment: "3,95,640",
-      second_installment: "2,63,760",
-      third_installment: "2,63,760",
-    },
-    {
-      dimension: "30X50",
-      price: "1099/-",
-      total_amount: "16,48,500",
-      down_payment: "4,94,550",
-      first_installment: "4,94,550",
-      second_installment: "3,29,700",
-      third_installment: "3,29,700",
-    },
-    {
-      dimension: "40X60",
-      price: "1099/-",
-      total_amount: "26,37,600",
-      down_payment: "7,91,280",
-      first_installment: "7,91,280",
-      second_installment: "5,27,520",
-      third_installment: "5,27,520",
-    },
-  ];
-
-  const newPriceChartData = [
+   const oldPriceChartData = [
     {
       dimension: "30X40",
       price: "1399/-",
@@ -165,6 +135,67 @@ const TapasihalliPage = () => {
       third_installment: "6,71,520",
     },
   ];
+
+  // const newPriceChartData = [
+  //   {
+  //     dimension: "30X40",
+  //     price: "1399/-",
+  //     total_amount: "16,78,800",
+  //     down_payment: "5,03,640",
+  //     first_installment: "5,03,640",
+  //     second_installment: "3,35,760",
+  //     third_installment: "3,35,760",
+  //   },
+  //   {
+  //     dimension: "30X50",
+  //     price: "1399/-",
+  //     total_amount: "20,98,500",
+  //     down_payment: "6,29,550",
+  //     first_installment: "6,29,550",
+  //     second_installment: "4,19,700",
+  //     third_installment: "4,19,700",
+  //   },
+  //   {
+  //     dimension: "40X60",
+  //     price: "1399/-",
+  //     total_amount: "33,37,600",
+  //     down_payment: "10,07,280",
+  //     first_installment: "10,07,280",
+  //     second_installment: "6,71,520",
+  //     third_installment: "6,71,520",
+  //   },
+  // ];
+
+  const newPriceChartData = [
+  {
+    dimension: "30X40",
+    price: "1699/-",
+    total_amount: "20,38,800",
+    down_payment: "6,11,640",
+    first_installment: "6,11,640",
+    second_installment: "4,07,760",
+    third_installment: "4,07,760",
+  },
+  {
+    dimension: "30X50",
+    price: "1699/-",
+    total_amount: "25,48,500",
+    down_payment: "7,64,550",
+    first_installment: "7,64,550",
+    second_installment: "5,09,700",
+    third_installment: "5,09,700",
+  },
+  {
+    dimension: "40X60",
+    price: "1699/-",
+    total_amount: "40,77,600",
+    down_payment: "12,23,280",
+    first_installment: "12,23,280",
+    second_installment: "8,15,520",
+    third_installment: "8,15,520",
+  },
+];
+
 
   const bankAccountDetails = [
     {

@@ -110,7 +110,7 @@ function MainApp() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/projects/tapasihalli" element={<TapasihalliPage />} />
           <Route path="/projects/marasandra" element={<MarasandraPage />} />
-          <Route path="/projects/hassan" element={<HassanPage/>}/>
+          {/* <Route path="/projects/hassan" element={<HassanPage/>}/> */}
           <Route path="/download/brochure" element={<DownloadBrochure />} />
           <Route
             path="/download/application"

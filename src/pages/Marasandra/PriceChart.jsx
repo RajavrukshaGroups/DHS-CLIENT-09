@@ -36,7 +36,7 @@
 // export default PriceChart;
 
 import { Container, Table } from "react-bootstrap";
-import seal from "../../images/Seal.png";
+import seal from "../../images/closeSealMarasandra.png";
 
 const PriceChart = ({ priceChartTableHeading, oldPriceChartData, newPriceChartData }) => {
     return (

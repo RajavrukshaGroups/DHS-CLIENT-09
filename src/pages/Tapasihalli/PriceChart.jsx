@@ -1,5 +1,5 @@
 import { Container, Table } from "react-bootstrap";
-import seal from "../../images/Seal.png";
+import seal from "../../images/closeSealTapasihalli.png";
 
 const PriceChart = ({ priceChartTableHeading, oldPriceChartData, newPriceChartData }) => {
     return (

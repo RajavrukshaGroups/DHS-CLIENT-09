@@ -2,13 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './header.css'; // Import your custom CSS file
-import logo from '../../images/logo.png'; // Import the main logo
+import sitLogo from '../../images/logo.png'; // Import the main logo
 import smallLogo from '../../images/smalllog.svg'; // Import the smaller logo
 
 function CustomNavbar() {
   const [isProjectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
   const [isDownloadDropdownOpen, setDownloadDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.getElementById('navbar');
@@ -34,8 +43,19 @@ function CustomNavbar() {
 >
       <Container>
         <Navbar.Brand href="/">
-          <img src={logo} alt="Logo" className="navbar-logo main-logo" />
-          <img src={smallLogo} alt="Small Logo" className="navbar-logo small-logo" />
+           <div className="flex-1 flex justify-start transition-all duration-500 ">
+            <img
+              src={sitLogo}
+              alt="DHS Logo"
+              className={`object-contain transition-all duration-500 ${
+                isScrolled ? "h-14 w-14" : "h-20 w-20"
+              }`}
+              onError={(e) =>
+                (e.currentTarget.src =
+                  "https://via.placeholder.com/150/0f3460/ffffff?text=DHS")
+              }
+            />
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -57,8 +77,8 @@ function CustomNavbar() {
               <NavDropdown.Item href="/projects/tapasihalli" className="dropdown-item-custom">Defence Habitat - Tapasihalli</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/projects/marasandra" className="dropdown-item-custom">Defence Habitat - Marasandra</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/projects/hassan" className="dropdown-item-custom">Defence Habitat - Hassan</NavDropdown.Item>
+              {/* <NavDropdown.Divider />
+              <NavDropdown.Item href="/projects/hassan" className="dropdown-item-custom">Defence Habitat - Hassan</NavDropdown.Item> */}
             </NavDropdown>
             <NavDropdown
               title="Download"

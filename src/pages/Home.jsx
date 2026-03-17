@@ -11,6 +11,7 @@ import HR12 from "../images/HR-12.webp";
 import HR13 from "../images/HR-8.jpg";
 import Marasandra_seal from "../images/Marasandra_seal.png";
 import Tapasihalli_seal from "../images/Tapasihalli_seal.png";
+import Hassan_seal from "../images/Hassan_seal.png";
 import Seal from "../images/Seal.png";
 import Seal1 from "../images/msTAMP.png";
 import Logo from "../images/logo.png";
@@ -261,7 +262,7 @@ const Home = () => {
                             Defence Habitat Tapasihalli{" "}
                             <span className="squarefit">
                               <span style={{ fontSize: "16px" }}>Rs.</span>
-                              1399
+                              1699
                               <span style={{ fontSize: "16px" }}>/-sqft*</span>
                             </span>
                             <p className="booking-text blink">
@@ -292,6 +293,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+
               <div className="col-md-6">
                 <div className="feature-block-one">
                   <div className="inner-box">
@@ -324,7 +326,7 @@ const Home = () => {
                               Defence Habitat Marasandra{" "}
                               <span className="squarefit">
                                 <span style={{ fontSize: "16px" }}>Rs.</span>
-                                1699
+                                1999
                                 <span style={{ fontSize: "16px" }}>
                                   /-sqft*{" "}
                                 </span>
@@ -356,6 +358,69 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+
+               {/* <div className="col-md-6">
+                <div className="feature-block-one">
+                  <div className="inner-box">
+                    <div className="image-box">
+                      <figure className="image relative">
+                        <img
+                          src={HR2}
+                          alt="Defence Habitat Tapasihalli"
+                          className="project-image"
+                        />
+                        <img
+                          src={Hassan_seal}
+                          alt="Seal"
+                          className="project-seal"
+                        />
+                      </figure>
+                      <div className="batch">
+                        <i className="icon-11"></i>
+                      </div>
+                    </div>
+                    <div className="lower-content">
+                      <div className="author-info clearfix">
+                        <figure className="author-thumb">
+                        
+                        </figure>
+                        <div className="mainatain">
+                          <div className="author-title">
+                            <h6 className="project-title">
+                             
+                              Defence Habitat Hassan{" "}
+                              <span className="squarefit">
+                                <span style={{ fontSize: "16px" }}>Rs.</span>
+                                1671
+                                <span style={{ fontSize: "16px" }}>
+                                  /-sqft*{" "}
+                                </span>
+                              </span>
+                              <p className="booking-text blink">
+                                
+                                <strong
+                                  style={{ fontSize: "larger", color: "green" }}
+                                >
+                                  Bookings Are Open Now!
+                                </strong>
+                              </p>
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="btn-boxs">
+                        <a
+                          href="/projects/hassan"
+                          className="theme-btn btn-one btn"
+                        >
+                          See Details
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+
             </div>
           </div>
         </div>

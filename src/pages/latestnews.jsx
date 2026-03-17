@@ -1,17 +1,26 @@
 // src/pages/MarasandraPage/MarasandraPage.js
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { Card, Container } from "react-bootstrap";
 import siteapproval from "../images/site_approval_new.png";
 import timesexpo from "../images/times_expo.png";
 import newsPaper2 from "../images/newsPaper2.jpeg";
 import newsPaper3 from "../images/newsPaper3.jpeg";
+import newsPaper4 from "../images/newsPaper4.jpeg";
 import "./styles/latestnews.css";
 
 const LatestNews = () => {
+  const navigate = useNavigate();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const goToPlots = () => {
+  navigate("/gallery#plots");
+};
+
+ 
 
   const openLightbox = (image) => {
     setSelectedImage(image);
@@ -62,7 +71,7 @@ const LatestNews = () => {
           flexDirection: "row",
         }}
       >
-        {[newsPaper2, newsPaper3,timesexpo].map((img, index) => (
+        {[newsPaper2, newsPaper3, newsPaper4, timesexpo].map((img, index) => (
           <div
             key={index}
             className="press-thumbnail"
@@ -127,50 +136,72 @@ const LatestNews = () => {
               <h2 className="ct">Latest News</h2>
               <div className="title-divider"></div>
               <div className="title-divider"></div>
-              <div className="flex flex-col sm:flex-row gap-3" >
-                    <div>
-                    <h5 className="custom-bullet latest-news-line">
-                      Defence Habitat Marasandra - Rs.1,399/- sqft (Booking Closed)
-                    </h5>
+              <div className="flex flex-col sm:flex-row gap-3">
+              <div>
+                <h5 className="custom-bullet latest-news-line">
+                  Defence Habitat Marasandra - Rs.1,699/- sqft (Booking Closed)
+                </h5>
 
-                    <h5 className="custom-bullet latest-news-line">
-                      Defence Habitat Tapasihalli - Rs.1099/- sqft (Booking Closed)
-                    </h5>
+                <h5 className="custom-bullet latest-news-line">
+                  Defence Habitat Tapasihalli - Rs.1,399/- sqft (Booking Closed)
+                </h5>
 
-                    <h5 className="custom-bullet latest-news-line">
-                      Good News..!!! Applications for new membership are open now,
-                      Hurry up! Contact us for more information.
-                      <span className="latest-badge">New</span>
-                    </h5>
+                <h5 className="custom-bullet latest-news-line">
+                  Good News..!!! Applications for new membership are open now,
+                  Hurry up! Contact us for more information.
+                  <span className="latest-badge">New</span>
+                </h5>
 
-                    <h5 className="custom-bullet latest-news-line">
-                      Defence Habitat Marasandra Phase-2 has launched - Rs.1,699/- sqft (Booking Opened)
-                      <span className="latest-badge">New</span>
-                    </h5>
+                <h5 className="custom-bullet latest-news-line">
+                  Defence Habitat Marasandra Phase-2 has launched - Rs.1,999/- sqft (Booking Opened)
+                  <span className="latest-badge">New</span>
+                </h5>
 
-                    <h5 className="custom-bullet latest-news-line">
-                      Defence Habitat Tapasihalli Phase-2 has launched - Rs.1399/- sqft (Booking Opened)
-                      <span className="latest-badge">New</span>
-                    </h5>
-                  </div>
-                  <div>
-              <h5 className="custom-bullet latest-news-line">
-                DHS-Tapasihalli: DPA/BMRDA approval received{" "}
-                <a
-                  href={siteapproval}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pdf-link"
-                >
-                  (View Site Approval)
-                </a>
-              </h5>
-
-              <h5 className="custom-bullet latest-news-line">
-                With the launch of Phase 2, we are adding even more to our project.
-              </h5>
+                <h5 className="custom-bullet latest-news-line">
+                  Defence Habitat Tapasihalli Phase-2 has launched - Rs.1,699/- sqft (Booking Opened)
+                  <span className="latest-badge">New</span>
+                </h5>
               </div>
+
+              <div>
+                <h5 className="custom-bullet latest-news-line">
+                  DHS-Tapasihalli: DPA/BMRDA approval received{" "}
+                  <a
+                    href={siteapproval}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pdf-link"
+                  >
+                    (View Site Approval)
+                  </a>
+                </h5>
+
+                <h5 className="custom-bullet latest-news-line">
+                  With the launch of Phase 2, we are adding even more to our project.
+                </h5>
+
+                 <h5 className="custom-bullet latest-news-line">
+                  DHS-Tapasihalli Phase 2 , Block 1{" "}
+                  <a
+                    // href={siteapproval}
+                    target="_blank"
+                    // rel="noopener noreferrer"
+                    onClick={goToPlots}
+                    className="pdf-link"
+                  >
+                    (View Plot Allotment)
+                  </a>
+                </h5>
+                {/* <div className=" mt-8 ml-6">
+                  <button
+                    onClick={goToPlots}
+                    className="bg-blue-900 text-white px-6 py-2 rounded-lg hover:scale-105 transition"
+                  >
+                    View Plot Allotment
+                  </button>
+                </div> */}
               </div>
+            </div>
             
             </div>
 
@@ -210,6 +241,6 @@ const LatestNews = () => {
       </Card>
     </Container>
   );
-};
 
+}
 export default LatestNews;

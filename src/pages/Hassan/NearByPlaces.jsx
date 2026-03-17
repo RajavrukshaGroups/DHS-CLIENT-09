@@ -22,14 +22,14 @@ const NearByPlaces = () => {
 
             <Row>
               {/* LEFT COLUMN */}
-              <Col md={6}>
+              <Col md={6} className=" text-center flex flex-col justify-center items-center ">
                 <h2 className="intro-subtitle">Prime Location</h2>
                 <div className="intro-divider mt-4"></div>
 
-                <ul className="feature-list">
-                  <li className="feature-item  text-start">
+                <ul className="feature-list text-center flex flex-col justify-center ">
+                  <li className="feature-item  text-start items-start">
                     <FaCheckCircle className="feature-icon" />
-                    <span>Strategically located on Hassan–Belur Main Road in Hassan.</span>
+                    <span>Located on Hassan–Belur Main Road in Hassan.</span>
                   </li>
 
                   <li className="feature-item  text-start">
@@ -49,7 +49,7 @@ const NearByPlaces = () => {
 
                   <li className="feature-item  text-start">
                     <FaCheckCircle className="feature-icon" />
-                    <span>Near Hoysala Village Resort and other lifestyle destinations.</span>
+                    <span>Near Hoysala Village Resort and lifestyle destinations.</span>
                   </li>
 
                   <li className="feature-item  text-start">
@@ -59,13 +59,13 @@ const NearByPlaces = () => {
 
                   <li className="feature-item text-start">
                     <FaCheckCircle className="feature-icon" />
-                    <span >Located in a rapidly developing area with strong growth potential.</span>
+                    <span >Located in a developing area with strong growth potential.</span>
                   </li>
                 </ul>
               </Col>
 
               {/* RIGHT COLUMN */}
-              <Col md={6}>
+              <Col md={6} className=" lg:mt-8 md:mt-6 text-center flex flex-col justify-center items-center">
                 <h2 className="intro-subtitle">Future-Ready Infrastructure</h2>
                 <div className="intro-divider mt-4"></div>
 
