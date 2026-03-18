@@ -6,9 +6,9 @@ import Marquee from "react-fast-marquee";
 import { Card, Container } from "react-bootstrap";
 import siteapproval from "../images/site_approval_new.png";
 import timesexpo from "../images/times_expo.png";
-import newsPaper2 from "../images/newsPaper2.jpeg";
-import newsPaper3 from "../images/newsPaper3.jpeg";
-import newsPaper4 from "../images/newsPaper4.jpeg";
+import newsPaper2 from "../images/newsPaper2.webp";
+import newsPaper3 from "../images/newsPaper3.webp";
+import newsPaper4 from "../images/newsPaper4.webp";
 import "./styles/latestnews.css";
 
 const LatestNews = () => {
@@ -71,7 +71,7 @@ const LatestNews = () => {
           flexDirection: "row",
         }}
       >
-        {[newsPaper2, newsPaper3, newsPaper4, timesexpo].map((img, index) => (
+        {["https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809984/newsPaper4_mgkwfv.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809983/newsPaper3_advjqu.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809984/newsPaper2_chlso4.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809982/times_expo_s4xpzz.png"].map((img, index) => (
           <div
             key={index}
             className="press-thumbnail"

@@ -23,32 +23,32 @@ import "./styles/Home.css";
 const Home = () => {
   const slides = [
     {
-      image: HR4,
+      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773748205/HR-4_jpuawn.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: HR2,
+      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: HR9,
+      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-9_plj1wc.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: HR10,
+      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: HR11,
+      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-11_yrhtkw.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: HR12,
+      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-12_smbpfv.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
@@ -188,7 +188,7 @@ const Home = () => {
                     <div className="image-box">
                       <figure className="image relative">
                         <img
-                          src={HR13}
+                          src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746137/HR-8_sjfesn.webp"
                           alt="Defence Habitat Tapasihalli"
                           className="project-image"
                         />
@@ -238,7 +238,7 @@ const Home = () => {
                     <div className="image-box">
                       <figure className="image relative">
                         <img
-                          src={HR10}
+                          src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp"
                           alt="Defence Habitat Tapasihalli"
                           className="project-image"
                         />
@@ -300,7 +300,7 @@ const Home = () => {
                     <div className="image-box">
                       <figure className="image relative">
                         <img
-                          src={HR2}
+                          src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp"
                           alt="Defence Habitat Tapasihalli"
                           className="project-image"
                         />

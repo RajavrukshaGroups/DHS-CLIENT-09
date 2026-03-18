@@ -26,7 +26,7 @@ const AboutUs = () => {
 
   const slides = [
     { image: HR4, title: "ABOUT US" },
-    { image: HR2, title: "ABOUT US" },
+    { image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp", title: "ABOUT US" },
     { image: HR9, title: "ABOUT US" },
     { image: HR10, title: "ABOUT US" },
     { image: HR11, title: "ABOUT US" },
