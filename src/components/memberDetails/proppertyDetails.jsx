@@ -12,7 +12,7 @@ function ProppertyDetails({ formData, handleChange, refreshKey, formErrors }) {
     const fetchProjects = async () => {
       try {
         const res = await axiosInstance.get(
-          "https://adminpanel.defencehousingsociety.com/project/all-projects"
+          "https://adminpanel.defencehousingsociety.com/project/all-projects",
         );
         // const res = await axiosInstance.get(
         //   "http://localhost:4000/project/all-projects"
@@ -30,7 +30,7 @@ function ProppertyDetails({ formData, handleChange, refreshKey, formErrors }) {
   // Update dimensions when projectName changes
   useEffect(() => {
     const selected = projectOptions.find(
-      (p) => p.projectName === formData?.projectName
+      (p) => p.projectName === formData?.projectName,
     );
     if (selected?.dimensions?.length) {
       setDimensions(selected.dimensions);
@@ -61,7 +61,7 @@ function ProppertyDetails({ formData, handleChange, refreshKey, formErrors }) {
   useEffect(() => {
     if (formData?.selectedPropertyCost && formData?.percentage) {
       const numericCost = parseFloat(
-        formData.selectedPropertyCost.replace(/,/g, "")
+        formData.selectedPropertyCost.replace(/,/g, ""),
       );
       const percentageCost =
         (numericCost * parseFloat(formData.percentage)) / 100;

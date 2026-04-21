@@ -22,8 +22,8 @@ function ViewUserdetails() {
       const response = await axiosInstance.get(
         `https://adminpanel.defencehousingsociety.com/member/view-member-details?page=${page}&search=${encodeURIComponent(
           // `http://localhost:4000/member/view-member-details?page=${page}&search=${encodeURIComponent(
-          search
-        )}`
+          search,
+        )}`,
       );
       setMemberDetails(response.data || []);
       setCurrentPage(response.currentPage || 1);
@@ -44,7 +44,7 @@ function ViewUserdetails() {
   const handleCheckAndNavigate = async (id) => {
     try {
       const response = await axiosInstance.get(
-        `/receipt/checkMembershipFee/${id}`
+        `/receipt/checkMembershipFee/${id}`,
       );
       if (response.feeAdded) {
         navigate(`/addconfirmationLetter/${id}`);
@@ -61,8 +61,8 @@ function ViewUserdetails() {
     if (!window.confirm("Are you sure you want to delete this member?")) return;
     try {
       await axiosInstance.delete(
-        `https://adminpanel.defencehousingsociety.com/member/delete-member/${id}`
-        // `http://localhost:4000/member/delete-member/${id}`
+        `https://adminpanel.defencehousingsociety.com/member/delete-member/${id}`,
+        // `http://localhost:4000/member/delete-member/${id}`,
       );
       toast.success("Member deleted successfully");
 

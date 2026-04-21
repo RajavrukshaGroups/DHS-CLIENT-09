@@ -247,7 +247,7 @@ const MemberFormWrapper = () => {
         "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/send-otp",
         {
           email: formData.email,
-        }
+        },
       );
       // await axios.post("http://localhost:4000/defenceWebsiteRoutes/send-otp", {
       //   email: formData.email,

@@ -19,7 +19,7 @@ const ViewReceiptHistory = () => {
     const fetchMember = async () => {
       try {
         const response = await axios.get(
-          `https://adminpanel.defencehousingsociety.com/member/get-member/${id}`
+          `https://adminpanel.defencehousingsociety.com/member/get-member/${id}`,
         );
         // const response = await axios.get(
         //   `http://localhost:4000/member/get-member/${id}`
@@ -42,7 +42,7 @@ const ViewReceiptHistory = () => {
     setReceiptLoading(true);
     try {
       const res = await axios.get(
-        `https://adminpanel.defencehousingsociety.com/receipt/receipts/member/${id}`
+        `https://adminpanel.defencehousingsociety.com/receipt/receipts/member/${id}`,
       );
       // const res = await axios.get(
       //   `http://localhost:4000/receipt/receipts/member/${id}`
@@ -94,7 +94,7 @@ const ViewReceiptHistory = () => {
         // `http://localhost:4000/member/delete-member-receipt-payment/${membersData._id}`,
         {
           data: { paymentType, installmentNumber },
-        }
+        },
       );
       toast.success("receipt deleted successfully");
       setShowDeleteModal(false);
@@ -281,7 +281,7 @@ const ViewReceiptHistory = () => {
                                 payment?.applicationFee +
                                 payment?.membershipFee +
                                 payment?.miscellaneousExpenses +
-                                payment?.shareFee
+                                payment?.shareFee,
                             ).toLocaleString("en-IN")
                           : Number(payment.amount).toLocaleString("en-IN")}
                         /-
@@ -327,7 +327,7 @@ const ViewReceiptHistory = () => {
                               handleDeleteClick(
                                 receipt._id,
                                 payment.paymentType,
-                                payment.installmentNumber
+                                payment.installmentNumber,
                               )
                             }
                           >
@@ -336,7 +336,7 @@ const ViewReceiptHistory = () => {
                         </div>
                       </td>
                     </tr>
-                  ))
+                  )),
                 )}
               </tbody>
             </table>

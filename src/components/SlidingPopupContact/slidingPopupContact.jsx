@@ -81,7 +81,7 @@ const ContactFormPopup = ({ isGoogleAds = false }) => {
   const validateAgreement = () => {
     if (!agreed) {
       setAgreeError(
-        "You must agree to the Terms and Privacy Policy to continue."
+        "You must agree to the Terms and Privacy Policy to continue.",
       );
       toast.error("Please accept Terms and Privacy Policy.");
       return false;
@@ -115,8 +115,9 @@ const ContactFormPopup = ({ isGoogleAds = false }) => {
             ...formData,
             captchaValue,
             source: isGoogleAds ? "google_ads" : "website", // Add source to payload
+            declaration: agreed,
           }),
-        }
+        },
       );
 
       if (res.ok) {

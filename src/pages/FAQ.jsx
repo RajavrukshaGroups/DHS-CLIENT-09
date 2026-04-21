@@ -234,7 +234,7 @@ const FAQ = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ ...data, captchaValue }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -247,7 +247,7 @@ const FAQ = () => {
         setSubmitStatus("error");
         const errorData = await response.json();
         toast.error(
-          errorData.error || "error submiting form.Please try again."
+          errorData.error || "error submiting form.Please try again.",
         );
         // toast.error("error submitting form.Please try again");
         // alert("Error submitting form. Please try again.");

@@ -16,8 +16,8 @@ function ViewMemberdetails() {
       const response = await axiosInstance.get(
         `https://adminpanel.defencehousingsociety.com/member/view-member-details?page=${page}&search=${encodeURIComponent(
           // `http://localhost:4000/member/view-member-details?page=${page}&search=${encodeURIComponent(
-          search
-        )}`
+          search,
+        )}`,
       );
       setMemberDetails(response.data || []);
       setCurrentPage(response.currentPage || 1);
@@ -44,12 +44,12 @@ function ViewMemberdetails() {
       await axiosInstance.put(
         `https://adminpanel.defencehousingsociety.com/member/update-status/${memberId}`,
         // `http://localhost:4000/member/update-status/${memberId}`,
-        { isActive: !currentStatus }
+        { isActive: !currentStatus },
       );
       setMemberDetails((prev) =>
         prev.map((m) =>
-          m._id === memberId ? { ...m, isActive: !currentStatus } : m
-        )
+          m._id === memberId ? { ...m, isActive: !currentStatus } : m,
+        ),
       );
     } catch (error) {
       console.error("Failed to toggle status", error);
@@ -67,7 +67,7 @@ function ViewMemberdetails() {
           email: member.email,
           SeniorityID: member.SeniorityID,
           password: member.password,
-        }
+        },
       );
       toast.success(response.message);
     } catch (error) {

@@ -64,7 +64,7 @@ const ContactUs = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ ...data, captchaValue }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -77,7 +77,7 @@ const ContactUs = () => {
         setSubmitStatus("error");
         const errorData = await response.json();
         toast.error(
-          errorData.error || "Error submitting form. Please try again."
+          errorData.error || "Error submitting form. Please try again.",
         );
       }
       recaptchaRef.current.reset();
