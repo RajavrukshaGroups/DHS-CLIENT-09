@@ -70,6 +70,7 @@ const ContactForm = ({ onFormSubmit }) => {
         source: "google_ads", // Explicitly set source
         location: "Google Ads Campaign", // Add location if needed
         acceptTerms: true,
+        declaration: true,
       };
 
       console.log("Sending payload:", payload); // Debug log
