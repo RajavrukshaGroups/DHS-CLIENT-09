@@ -215,28 +215,6 @@ const MemberFormWrapper = () => {
       reader.readAsDataURL(files[0]);
     }
   };
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const data = new FormData();
-  //   for (const key in formData) data.append(key, formData[key]);
-  //   if (memberPhoto) data.append('memberPhoto', memberPhoto);
-  //   if (memberSign) data.append('memberSign', memberSign);
-
-  //   // ✅ Send OTP
-  //   try {
-  //     await axios.post("http://localhost:4000/defenceWebsiteRoutes/send-otp", {
-  //       email: formData.email,
-  //     });
-
-  //     // ✅ Redirect to OTP verification
-  //     navigate("/otpverification", {
-  //       state: { formData, memberPhoto, memberSign },
-  //     });
-  //   } catch (err) {
-  //     console.error("OTP send failed", err);
-  //     toast.error("Failed to send OTP. Try again.");
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

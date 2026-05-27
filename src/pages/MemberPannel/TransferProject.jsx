@@ -24,7 +24,7 @@ const TransferProject = () => {
 
       try {
         const response = await axios.get(
-          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/get-transferred-history/${membershipNo}`
+          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/get-transferred-history/${membershipNo}`,
           // `http://localhost:4000/defenceWebsiteRoutes/get-transferred-history/${membershipNo}`,
         );
         if (response.status === 200 && Array.isArray(response.data)) {

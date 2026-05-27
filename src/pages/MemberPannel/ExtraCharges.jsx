@@ -59,8 +59,9 @@ const ExtraCharges = () => {
   };
 
   const handleViewReceipt = (receiptId, paymentId) => {
-    const url = `https://adminpanel.defencehousingsociety.com/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}`;
-    // const url = `http://localhost:4000/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}`;
+    const url = `https://adminpanel.defencehousingsociety.com/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}&viewOnly=true`;
+    // const url = `http://localhost:4000/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}&viewOnly=true`;
+
     window.open(url, "_blank");
   };
 

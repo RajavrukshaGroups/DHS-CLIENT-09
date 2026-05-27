@@ -138,7 +138,7 @@ const OnlineApplication = () => {
     let generatedCaptcha = "";
     for (let i = 0; i < 6; i++) {
       generatedCaptcha += String.fromCharCode(
-        Math.floor(Math.random() * 26) + 65
+        Math.floor(Math.random() * 26) + 65,
       );
     }
     setCaptcha(generatedCaptcha);
@@ -260,11 +260,11 @@ const OnlineApplication = () => {
       try {
         // const response = await axios.post(
         //   "http://localhost:4000/api/submit",
-        //   formData
+        //   formData,
         // );
         const response = await axios.post(
           "https://adminpanel.defencehousingsociety.com/api/submit",
-          formData
+          formData,
         );
 
         setFormId(response.data.formId);
@@ -282,11 +282,11 @@ const OnlineApplication = () => {
       try {
         // const response = await axios.post(
         //   "http://localhost:4000/api/verify-otp-and-submit",
-        //   { formId, otp }
+        //   { formId, otp },
         // );
         const response = await axios.post(
           "https://adminpanel.defencehousingsociety.com/api/verify-otp-and-submit",
-          { formId, otp }
+          { formId, otp },
         );
 
         if (response.data.success) {
@@ -347,11 +347,11 @@ const OnlineApplication = () => {
 
       // const response = await axios.post(
       //   "http://localhost:4000/api/submit",
-      //   formData
+      //   formData,
       // );
       const response = await axios.post(
         "https://adminpanel.defencehousingsociety.com/api/submit",
-        formData
+        formData,
       );
 
       if (response.data.formId) {

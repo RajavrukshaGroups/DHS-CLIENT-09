@@ -54,10 +54,7 @@ const ResetPassword = () => {
           // "http://localhost:4000/member/resetpassword",
           fromData,
         );
-        // const response = await axios.post(
-        //   "http://localhost:4000/member/resetpassword",
-        //   fromData
-        // );
+
         toast.success("Password changed successfully");
         navigate("/dashboard");
       } catch (error) {

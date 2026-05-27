@@ -25,34 +25,6 @@ const ReceiptList = () => {
     return `${day}/${month}/${year}`;
   };
 
-  // useEffect(() => {
-  //   const fetchReceipts = async () => {
-  //     const seniorityId = sessionStorage.getItem("seniority_id");
-
-  //     if (!seniorityId) {
-  //       setError("No seniority ID found in session");
-  //       setLoading(false);
-  //       return;
-  //     }
-
-  //     try {
-  //       const response = await axios.get(
-  //         "http://localhost:4000/defenceWebsiteRoutes/fetchReceipts",
-  //         {
-  //           params: { seniority_id: seniorityId },
-  //         }
-  //       );
-  //       setReceipts(response.data.data.payments);
-  //     } catch (error) {
-  //       setError(error.message);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchReceipts();
-  // }, []);
-
   useEffect(() => {
     const fetchReceipts = async () => {
       // const seniorityId = sessionStorage.getItem("seniority_id");
@@ -97,8 +69,8 @@ const ReceiptList = () => {
   }, []);
 
   const handleViewReceipt = (receiptId, paymentId) => {
-    const url = `https://adminpanel.defencehousingsociety.com/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}`;
-    // const url = `http://localhost:4000/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}`;
+    const url = `https://adminpanel.defencehousingsociety.com/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}&viewOnly=true`;
+    // const url = `http://localhost:4000/receipt/get-receipt-details/${receiptId}?paymentId=${paymentId}&viewOnly=true`;
     window.open(url, "_blank");
   };
 

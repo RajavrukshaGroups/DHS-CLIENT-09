@@ -59,12 +59,12 @@ const Dashboard = () => {
   const handleViewConfirmation = async (userId) => {
     try {
       const res = await axios.get(
-        `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}`,
-        // `http://localhost:4000/receipt/view-confirmation/${userId}`,
+        `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}?viewOnly=true`,
+        // `http://localhost:4000/receipt/view-confirmation/${userId}?viewOnly=true`,
       );
 
-      const url = `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}`;
-      // const url = `http://localhost:4000/receipt/view-confirmation/${userId}`;
+      const url = `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}?viewOnly=true`;
+      // const url = `http://localhost:4000/receipt/view-confirmation/${userId}?viewOnly=true`;
       window.open(url, "_blank");
     } catch (error) {
       console.error("Error fetching site confirmation:", error);
@@ -73,18 +73,36 @@ const Dashboard = () => {
   };
 
   const handleShareCertificate = (receiptId) => {
-    // const url = `http://localhost:4000/receipt/get-share-certificate/${receiptId}`;
-    const url = `https://adminpanel.defencehousingsociety.com/receipt/get-share-certificate/${receiptId}`;
+    // const url = `http://localhost:4000/receipt/get-share-certificate/${receiptId}?viewOnly=true`;
+    const url = `https://adminpanel.defencehousingsociety.com/receipt/get-share-certificate/${receiptId}?viewOnly=true`;
     window.open(url, "_blank");
   };
 
+  // const handleViewAffidavit = (affidavitUrl) => {
+  //   if (affidavitUrl) {
+  //     const url = affidavitUrl;
+  //     window.open(url, "_blank");
+  //   } else {
+  //     console.error("Error fetching site confirmation:", error);
+  //     toast.error("affidavit letter is not available yet.");
+  //   }
+  // };
+
   const handleViewAffidavit = (affidavitUrl) => {
     if (affidavitUrl) {
-      const url = affidavitUrl;
+      const encodedUrl = encodeURIComponent(affidavitUrl);
+
+      // const url =
+      //   `http://localhost:4000/receipt/view-affidavit` +
+      //   `?url=${encodedUrl}&viewOnly=true`;
+
+      const url =
+        `https://adminpanel.defencehousingsociety.com/receipt/view-affidavit` +
+        `?url=${encodedUrl}&viewOnly=true`;
+
       window.open(url, "_blank");
     } else {
-      console.error("Error fetching site confirmation:", error);
-      toast.error("affidavit letter is not available yet.");
+      toast.error("Affidavit letter is not available yet.");
     }
   };
 
