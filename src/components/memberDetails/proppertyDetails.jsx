@@ -15,7 +15,7 @@ function ProppertyDetails({ formData, handleChange, refreshKey, formErrors }) {
           "https://adminpanel.defencehousingsociety.com/project/all-projects",
         );
         // const res = await axiosInstance.get(
-        //   "http://localhost:4000/project/all-projects"
+        //   "http://localhost:4000/project/all-projects",
         // );
         setProjectOptions(res.data || []);
       } catch (err) {

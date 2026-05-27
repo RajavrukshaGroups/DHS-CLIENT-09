@@ -19,9 +19,10 @@ const MyProject = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const seniorityId = sessionStorage.getItem("seniority_id");
-      if (!seniorityId) {
-        setError("No seniority ID found in session");
+      // const seniorityId = sessionStorage.getItem("seniority_id");
+      const membershipNo = sessionStorage.getItem("membership_no");
+      if (!membershipNo) {
+        setError("No Membership number found in session");
         setLoading(false);
         return;
       }
@@ -35,8 +36,9 @@ const MyProject = () => {
           "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/fetchUserData",
           // "http://localhost:4000/defenceWebsiteRoutes/fetchUserData",
           {
-            params: { seniority_id: seniorityId },
-          }
+            // params: { seniority_id: seniorityId },
+            params: { membership_no: membershipNo },
+          },
         );
         setUserData(response.data);
       } catch (error) {
@@ -70,7 +72,8 @@ const MyProject = () => {
             <tr>
               <th>Sl. No</th>
               <th>Project Name</th>
-              <th>Seniority Id</th>
+              {/* <th>Seniority Id</th> */}
+              <th>Membership No</th>
               <th>Plot Size</th>
               <th>Sq Ft Price </th>
               <th>Project Amount</th>
@@ -102,7 +105,8 @@ const MyProject = () => {
                 <td className="project-name">
                   {user.propertyDetails?.projectName}
                 </td>
-                <td>{user.SeniorityID}</td>
+                {/* <td>{user.SeniorityID}</td> */}
+                <td>{user.MembershipNo}</td>
                 <td>
                   {user.propertyDetails?.length}X{user.propertyDetails?.breadth}
                 </td>
@@ -113,7 +117,7 @@ const MyProject = () => {
                   ₹
                   {formatNumber(
                     user.propertyDetails?.propertyCost -
-                      user.propertyDetails?.paidAmount
+                      user.propertyDetails?.paidAmount,
                   )}
                 </td>
               </tr>

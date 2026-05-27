@@ -22,34 +22,51 @@ const MemberHeader = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const seniorityId = sessionStorage.getItem("seniority_id");
-      if (!seniorityId) {
-        setError("No seniority ID found in session");
+      const membershipNo = sessionStorage.getItem("membership_no");
+
+      console.log("membershipNo", membershipNo);
+
+      if (
+        !membershipNo ||
+        membershipNo === "undefined" ||
+        membershipNo === "null"
+      ) {
+        setError("No Membership number found in session");
+
         toast.error("Please login");
+
         navigate("/memberlogin");
+
         setLoading(false);
+
         return;
       }
+
       try {
         const response = await axios.get(
-          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/dashboard/${seniorityId}`
-          // `http://localhost:4000/defenceWebsiteRoutes/dashboard/${seniorityId}`
+          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/dashboard/${membershipNo}`,
+          // `http://localhost:4000/defenceWebsiteRoutes/dashboard/${membershipNo}`,
         );
+
         console.log("Member Data in header:", response.data.data);
+
         setMembersdata(response.data.data);
       } catch (err) {
         console.error("Error fetching member data:", err);
+
         setError("Failed to fetch member data");
       } finally {
         setLoading(false);
       }
     };
+
     fetchData();
   }, [navigate]);
 
   const handleLogout = async () => {
     try {
-      sessionStorage.removeItem("seniority_id");
+      // sessionStorage.removeItem("seniority_id");
+      sessionStorage.removeItem("membership_no");
       window.location.href = "/memberlogin"; // Redirect to login page or any other page
       console.log("logout succesfull");
     } catch (error) {

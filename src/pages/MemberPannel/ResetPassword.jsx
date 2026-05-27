@@ -8,7 +8,8 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
-  const [seniorityId, setSeniorityId] = useState("");
+  // const [seniorityId, setSeniorityId] = useState("");
+  const [membershipNo, setMembershipNo] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,9 +17,9 @@ const ResetPassword = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   useEffect(() => {
     // Retrieve the seniority ID from session storage
-    const storedSeniorityId = sessionStorage.getItem("seniority_id");
-    if (storedSeniorityId) {
-      setSeniorityId(storedSeniorityId);
+    const storedMembershipNo = sessionStorage.getItem("membership_no");
+    if (storedMembershipNo) {
+      setMembershipNo(storedMembershipNo);
     }
   }, []);
 
@@ -38,8 +39,12 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validatePassword()) {
+      // const fromData = {
+      //   seniorityId,
+      //   password,
+      // };
       const fromData = {
-        seniorityId,
+        membershipNo,
         password,
       };
 
@@ -47,7 +52,7 @@ const ResetPassword = () => {
         const response = await axios.post(
           "https://adminpanel.defencehousingsociety.com/member/resetpassword",
           // "http://localhost:4000/member/resetpassword",
-          fromData
+          fromData,
         );
         // const response = await axios.post(
         //   "http://localhost:4000/member/resetpassword",
@@ -75,14 +80,17 @@ const ResetPassword = () => {
         {error && <div className="error">{error}</div>}
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="seniorityId" className="label">
+            {/* <label htmlFor="seniorityId" className="label">
               Seniority ID
+            </label> */}
+            <label htmlFor="membershipNo" className="label">
+              Membership Number
             </label>
             <input
               type="text"
-              id="seniorityId"
+              id="membershipNo"
               className="input"
-              value={seniorityId}
+              value={membershipNo}
               readOnly
             />
           </div>

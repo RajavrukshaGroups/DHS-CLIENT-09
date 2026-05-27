@@ -36,7 +36,7 @@ function Otpverification() {
         // "http://localhost:4000/defenceWebsiteRoutes/resend-otp",
         {
           email: formData.email,
-        }
+        },
       );
       if (res.data.success) {
         toast.success("OTP resent successfully!");
@@ -107,7 +107,7 @@ function Otpverification() {
         {
           email: formData.email,
           otp: finalOtp,
-        }
+        },
       );
 
       if (verifyRes.data.success !== true) {
@@ -129,7 +129,7 @@ function Otpverification() {
         submissionData,
         {
           headers: { "Content-Type": "multipart/form-data" },
-        }
+        },
       );
 
       toast.success("Application submitted successfully!");

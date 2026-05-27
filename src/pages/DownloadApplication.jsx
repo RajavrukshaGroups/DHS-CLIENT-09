@@ -25,14 +25,14 @@ const DownloadApplication = () => {
       const response = await axios.post(
         "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/download",
         // "http://localhost:4000/defenceWebsiteRoutes/download",
-        data
+        data,
         // { responseType: "blob" }
       );
 
       if (response.status === 200) {
         window.open(
           "https://res.cloudinary.com/den0iz8zn/image/upload/v1755582287/DEFENCE_HABITAT_SOCIETY__Application_ztkc0q.pdf",
-          "_blank"
+          "_blank",
         );
         toast.success("Form submitted and PDF downloaded!");
         reset();

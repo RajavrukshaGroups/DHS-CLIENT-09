@@ -13,18 +13,19 @@ const TransferProject = () => {
 
   useEffect(() => {
     const fetchTransferData = async () => {
-      const seniorityId = sessionStorage.getItem("seniority_id");
+      // const seniorityId = sessionStorage.getItem("seniority_id");
+      const membershipNo = sessionStorage.getItem("membership_no");
 
-      if (!seniorityId) {
-        setError("No seniority ID found in session");
+      if (!membershipNo) {
+        setError("No Membership number found in session");
         setLoading(false);
         return;
       }
 
       try {
         const response = await axios.get(
-          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/get-transferred-history/${seniorityId}`
-          // `http://localhost:4000/defenceWebsiteRoutes/get-transferred-history/${seniorityId}`
+          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/get-transferred-history/${membershipNo}`
+          // `http://localhost:4000/defenceWebsiteRoutes/get-transferred-history/${membershipNo}`,
         );
         if (response.status === 200 && Array.isArray(response.data)) {
           setTransferData(response.data);
@@ -74,7 +75,8 @@ const TransferProject = () => {
               <th>From</th>
               <th>To</th>
               <th>Project Name</th>
-              <th>Seniority ID</th>
+              {/* <th>Seniority ID</th> */}
+              <th>Membership No</th>
               <th>Transfer Date</th>
               <th>Transfer Reason</th>
             </tr>
@@ -87,7 +89,8 @@ const TransferProject = () => {
                   <td>{data?.previousMemberDetails.name}</td>
                   <td>{data?.refname}</td>
                   <td>{data?.propertyDetails.projectName}</td>
-                  <td>{data?.SeniorityID}</td>
+                  {/* <td>{data?.SeniorityID}</td> */}
+                  <td>{data?.MembershipNo}</td>
                   <td>
                     {/* {new Date().toLocaleDateString()}{" "} */}
                     {data?.transferDate ? formatDate(data.transferDate) : "N/A"}

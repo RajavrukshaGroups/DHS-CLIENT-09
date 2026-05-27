@@ -22,7 +22,7 @@ const ViewReceiptHistory = () => {
           `https://adminpanel.defencehousingsociety.com/member/get-member/${id}`,
         );
         // const response = await axios.get(
-        //   `http://localhost:4000/member/get-member/${id}`
+        //   `http://localhost:4000/member/get-member/${id}`,
         // );
         setTimeout(() => {
           setMemberData(response.data);
@@ -45,7 +45,7 @@ const ViewReceiptHistory = () => {
         `https://adminpanel.defencehousingsociety.com/receipt/receipts/member/${id}`,
       );
       // const res = await axios.get(
-      //   `http://localhost:4000/receipt/receipts/member/${id}`
+      //   `http://localhost:4000/receipt/receipts/member/${id}`,
       // );
 
       setTimeout(() => {

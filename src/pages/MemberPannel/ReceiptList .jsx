@@ -55,10 +55,11 @@ const ReceiptList = () => {
 
   useEffect(() => {
     const fetchReceipts = async () => {
-      const seniorityId = sessionStorage.getItem("seniority_id");
+      // const seniorityId = sessionStorage.getItem("seniority_id");
+      const membershipNo = sessionStorage.getItem("membership_no");
 
-      if (!seniorityId) {
-        setError("No seniority ID found in session");
+      if (!membershipNo) {
+        setError("No Membership number found in session");
         setLoading(false);
         return;
       }
@@ -68,8 +69,9 @@ const ReceiptList = () => {
           "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/fetchReceipts",
           // "http://localhost:4000/defenceWebsiteRoutes/fetchReceipts",
           {
-            params: { seniority_id: seniorityId },
-          }
+            // params: { seniority_id: seniorityId },
+            params: { membership_no: membershipNo },
+          },
         );
         console.log("response data", response.data);
         const receiptId = response.data.data?._id;
@@ -178,7 +180,7 @@ const ReceiptList = () => {
                   <td>
                     {formatPaymentType(
                       receipt.paymentType,
-                      receipt.installmentNumber
+                      receipt.installmentNumber,
                     )}
                   </td>
 

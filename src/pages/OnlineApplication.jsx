@@ -171,7 +171,7 @@ const OnlineApplication = () => {
     let generatedCaptcha = "";
     for (let i = 0; i < 6; i++) {
       generatedCaptcha += String.fromCharCode(
-        Math.floor(Math.random() * 26) + 65
+        Math.floor(Math.random() * 26) + 65,
       );
     }
     setCaptcha(generatedCaptcha);
@@ -296,7 +296,7 @@ const OnlineApplication = () => {
         const response = await axios.post(
           "https://adminpanel.defencehousingsociety.com/api/submit",
           // "http://localhost:4000/api/submit",
-          formData
+          formData,
         );
         // const response = await axios.post('http://localhost:5000/api/submit', formData);
         setFormId(response.data.formId);
@@ -315,7 +315,7 @@ const OnlineApplication = () => {
         const response = await axios.post(
           "https://adminpanel.defencehousingsociety.com/api/verify-otp-and-submit",
           // "http://localhost:4000/api/verify-otp-and-submit",
-          { formId, otp }
+          { formId, otp },
         );
         // const response = await axios.post('http://localhost:5000/api/verify-otp-and-submit', { formId, otp });
         setFormId(response.data.formId); // Store the formId for later use
@@ -326,7 +326,7 @@ const OnlineApplication = () => {
           }, 2000);
         } else {
           setOtpError(
-            "Thank you for submitting the form our tem will get in touch with you shortly"
+            "Thank you for submitting the form our tem will get in touch with you shortly",
           );
           setTimeout(() => {
             navigate("/"); // Navigate to home screen after showing the OTP error message
@@ -390,7 +390,7 @@ const OnlineApplication = () => {
       const response = await axios.post(
         "https://adminpanel.defencehousingsociety.com/api/submit",
         // "http://localhost:4000/api/submit",
-        formData
+        formData,
       );
       // const response = await axios.post('http://localhost:5000/api/submit', formData);
       // const response = await axios.post('https://memberpanel.defencehousingsociety.com//')

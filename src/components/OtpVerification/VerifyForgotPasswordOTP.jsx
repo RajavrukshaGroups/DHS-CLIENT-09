@@ -11,7 +11,8 @@ const VerifyForgotPasswordOTP = () => {
   const [loading, setLoading] = useState(false);
   const [resendLoading, setResendLoading] = useState(false);
 
-  const seniority_id = sessionStorage.getItem("seniority_id");
+  // const seniority_id = sessionStorage.getItem("seniority_id");
+  const membership_no = sessionStorage.getItem("membership_no");
 
   // handle change in OTP input
   const handleChange = (value, index) => {
@@ -57,10 +58,14 @@ const VerifyForgotPasswordOTP = () => {
       const res = await axios.post(
         "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/verify-otp",
         // "http://localhost:4000/defenceWebsiteRoutes/verify-otp",
+        // {
+        //   seniority_id,
+        //   otp: fullOtp,
+        // },
         {
-          seniority_id,
+          membership_no,
           otp: fullOtp,
-        }
+        },
       );
 
       if (res.data.success) {
@@ -83,9 +88,12 @@ const VerifyForgotPasswordOTP = () => {
       const res = await axios.post(
         "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/forgot-password",
         // "http://localhost:4000/defenceWebsiteRoutes/forgot-password",
+        // {
+        //   seniority_id,
+        // },
         {
-          seniority_id,
-        }
+          membership_no,
+        },
       );
 
       if (res.data.success) {
@@ -110,7 +118,7 @@ const VerifyForgotPasswordOTP = () => {
           <div className="text-center space-y-2">
             <h2 className="text-3xl font-semibold">Email Verification</h2>
             <p className="text-sm text-gray-400">
-              We sent a code to the email linked to your Seniority ID
+              We sent a code to the email linked to your Membership Number
             </p>
           </div>
 

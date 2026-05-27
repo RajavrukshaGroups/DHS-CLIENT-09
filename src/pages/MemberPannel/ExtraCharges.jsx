@@ -17,9 +17,9 @@ const ExtraCharges = () => {
 
   useEffect(() => {
     const fetchTransferData = async () => {
-      const seniorityId = sessionStorage.getItem("seniority_id");
-      if (!seniorityId) {
-        setError("No seniority ID found in session");
+      const membershipNo = sessionStorage.getItem("membership_no");
+      if (!membershipNo) {
+        setError("No Membership number found in session");
         setLoading(false);
         return;
       }
@@ -33,8 +33,9 @@ const ExtraCharges = () => {
           "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/extracharges",
           // "http://localhost:4000/defenceWebsiteRoutes/extracharges",
           {
-            params: { seniority_id: seniorityId },
-          }
+            // params: { seniority_id: seniorityId },
+            params: { membership_no: membershipNo },
+          },
         );
         setTransferData(response.data.data);
       } catch (error) {
@@ -82,7 +83,8 @@ const ExtraCharges = () => {
               <th>Paid Date</th>
               <th>Paid Amount</th>
               <th>Cheque/DD/Transaction ID</th>
-              <th>Seniority ID</th>
+              {/* <th>Seniority ID</th> */}
+              <th>Membership No</th>
               {/* <th>Transfer Date</th> */}
               <th>Reason</th>
               <th>View</th>
@@ -101,7 +103,8 @@ const ExtraCharges = () => {
                       data.transactionId ||
                       "-"}
                   </td>
-                  <td>{sessionStorage.getItem("seniority_id")}</td>
+                  {/* <td>{sessionStorage.getItem("seniority_id")}</td> */}
+                  <td>{sessionStorage.getItem("membership_no")}</td>
                   <td>{data.otherCharges || "-"}</td>
                   <td>
                     <button

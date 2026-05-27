@@ -26,7 +26,7 @@ const DownloadBrochure = () => {
         "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/brochure",
         // "http://localhost:4000/defenceWebsiteRoutes/brochure",
         data,
-        { responseType: "blob" }
+        { responseType: "blob" },
       );
       const blob = new Blob([response.data], { type: "application/pdf" });
       saveAs(blob, "Brochure.pdf");

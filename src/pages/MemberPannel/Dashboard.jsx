@@ -18,20 +18,30 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const seniorityId = sessionStorage.getItem("seniority_id");
+      // const seniorityId = sessionStorage.getItem("seniority_id");
+      const membershipNo = sessionStorage.getItem("membership_no");
+      console.log("membershipNo", membershipNo);
 
-      if (!seniorityId) {
-        setError("No seniority ID found in session");
+      if (
+        !membershipNo ||
+        membershipNo === "undefined" ||
+        membershipNo === "null"
+      ) {
+        setError("No Membership number found in session");
+
         alert("Please login");
+
         navigate("/memberlogin");
+
         setLoading(false);
+
         return;
       }
 
       try {
         const response = await axios.get(
-          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/dashboard/${seniorityId}`
-          // `http://localhost:4000/defenceWebsiteRoutes/dashboard/${seniorityId}`
+          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/dashboard/${membershipNo}`,
+          // `http://localhost:4000/defenceWebsiteRoutes/dashboard/${membershipNo}`,
         );
         if (response) {
           setMemberdata(response.data.data);
@@ -49,8 +59,8 @@ const Dashboard = () => {
   const handleViewConfirmation = async (userId) => {
     try {
       const res = await axios.get(
-        `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}`
-        // `http://localhost:4000/receipt/view-confirmation/${userId}`
+        `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}`,
+        // `http://localhost:4000/receipt/view-confirmation/${userId}`,
       );
 
       const url = `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}`;
@@ -163,7 +173,8 @@ const Dashboard = () => {
               <strong>Name:</strong> {memberData.name}
             </p>
             <p>
-              <strong>Seniority ID:</strong> {memberData.SeniorityID}
+              {/* <strong>Seniority ID:</strong> {memberData.SeniorityID} */}
+              <strong>Membership No:</strong> {memberData.MembershipNo}
             </p>
 
             <button className="user-button" onClick={handleResetPasswordClick}>

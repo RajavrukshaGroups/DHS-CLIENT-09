@@ -13,10 +13,11 @@ const ProjectStatus = () => {
   //ssss
   useEffect(() => {
     const fetchTransferData = async () => {
-      const seniorityId = sessionStorage.getItem("seniority_id");
+      // const seniorityId = sessionStorage.getItem("seniority_id");
+      const membershipNo = sessionStorage.getItem("membership_no");
 
-      if (!seniorityId) {
-        setError("No seniority ID found in session");
+      if (!membershipNo) {
+        setError("No Membership number found in session");
         setLoading(false);
         return;
       }
@@ -30,8 +31,8 @@ const ProjectStatus = () => {
           "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/projectstatus",
           // "http://localhost:4000/defenceWebsiteRoutes/projectstatus",
           {
-            params: { seniority_id: seniorityId },
-          }
+            params: { membership_no: membershipNo },
+          },
         );
         setTransferData(response.data);
       } catch (error) {

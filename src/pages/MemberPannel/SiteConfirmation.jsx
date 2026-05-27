@@ -17,7 +17,7 @@ const ViewSiteConfirmation = () => {
           // "http://localhost:4000/getUserPk",
           {
             params: { seniority_id: seniorityId },
-          }
+          },
         );
         const userPk = response.data.user_pk;
 

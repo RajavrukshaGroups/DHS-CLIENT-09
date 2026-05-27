@@ -6,22 +6,25 @@ import "./MemberPannel_Styles/MemberLogin.css";
 import { toast } from "react-toastify";
 
 const MemberLogin = () => {
-  const [seniorityId, setSeniorityId] = useState("");
+  // const [seniorityId, setSeniorityId] = useState("");
+  const [membershipNo, setMembershipNo] = useState("");
   const [password, setPassword] = useState("");
   //  const [email, setEmail] = useState(""); // or pass via props/context
   const navigate = useNavigate();
 
-  const handleReset = async (seniorityId) => {
+  const handleReset = async (membershipNo) => {
     try {
       const response = await axios.post(
         "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/forgot-password",
         // "http://localhost:4000/defenceWebsiteRoutes/forgot-password",
-        { seniority_id: seniorityId }
+        // { seniority_id: seniorityId },
+        { membership_no: membershipNo },
       );
 
       if (response.data.success) {
         toast.success("OTP sent to your email");
-        sessionStorage.setItem("seniority_id", seniorityId);
+        // sessionStorage.setItem("seniority_id", seniorityId);
+        sessionStorage.setItem("membership_no", membershipNo);
         navigate("/forgotPassword"); // 👉 go to OTP page
       } else {
         toast.error(response.data.message || "Something went wrong");
@@ -29,7 +32,7 @@ const MemberLogin = () => {
     } catch (error) {
       console.error("Forgot password error:", error);
       toast.error(
-        error.response?.data?.message || "Something went wrong. Try again."
+        error.response?.data?.message || "Something went wrong. Try again.",
       );
     }
   };
@@ -40,16 +43,22 @@ const MemberLogin = () => {
       const response = await axios.post(
         "https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/memberLogin",
         // "http://localhost:4000/defenceWebsiteRoutes/memberLogin",
+        // {
+        //   seniority_id: seniorityId,
+        //   password: password,
+        // },
         {
-          seniority_id: seniorityId,
+          membership_no: membershipNo,
           password: password,
-        }
+        },
       );
+      console.log("response", response);
       if (response.data.success) {
-        sessionStorage.setItem("seniority_id", response.data.seniority_id);
-        navigate("/dashboard");
+        sessionStorage.setItem("membership_no", response.data.membership_no);
         toast.success(response.data.message);
-        // Toast.success(response.data.message)
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 100);
       } else {
         toast.error(response.data.message);
       }
@@ -85,13 +94,13 @@ const MemberLogin = () => {
               onSubmit={handleSubmit}
             >
               <div className="form-group">
-                <label>Seniority ID*</label>
+                <label>Membership No*</label>{" "}
                 <input
                   type="text"
-                  name="seniority_id"
+                  name="membership_no"
                   required
-                  value={seniorityId}
-                  onChange={(e) => setSeniorityId(e.target.value)}
+                  value={membershipNo}
+                  onChange={(e) => setMembershipNo(e.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -117,7 +126,12 @@ const MemberLogin = () => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleReset(seniorityId);
+
+                    if (!membershipNo.trim()) {
+                      toast.error("Please enter your Membership Number");
+                      return;
+                    }
+                    handleReset(membershipNo);
                   }}
                   className="forgot-password-link"
                 >

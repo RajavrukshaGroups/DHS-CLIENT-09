@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const ContactAdmin = () => {
   const navigate = useNavigate();
-  const [seniorityId, setSeniorityId] = useState("");
+  // const [seniorityId, setSeniorityId] = useState("");
+  const [membershipNo, setMembershipNo] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
@@ -13,9 +14,9 @@ const ContactAdmin = () => {
   const [responseStatus, setResponseStatus] = useState(null);
 
   useEffect(() => {
-    const storedSeniorityId = sessionStorage.getItem("seniority_id");
-    if (storedSeniorityId) {
-      setSeniorityId(storedSeniorityId);
+    const storedMembershipNo = sessionStorage.getItem("membership_no");
+    if (storedMembershipNo) {
+      setMembershipNo(storedMembershipNo);
     }
   }, []);
 
@@ -29,19 +30,19 @@ const ContactAdmin = () => {
       const response = await axios.post(
         `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/dashboard-contact-admin`,
         {
-          seniorityId,
+          membershipNo,
           subject,
           message,
-        }
+        },
       );
 
       // const response = await axios.post(
       //   `http://localhost:4000/defenceWebsiteRoutes/dashboard-contact-admin`,
-      //   {
-      //     seniorityId,
-      //     subject,
-      //     message,
-      //   }
+      //       {
+      //   membershipNo,
+      //   subject,
+      //   message,
+      // }
       // );
 
       setResponseMessage("Message sent successfully");
@@ -65,8 +66,8 @@ const ContactAdmin = () => {
       <h2>Contact Admin</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Seniority ID:</label>
-          <input type="text" value={seniorityId} readOnly required />
+          <label>Membership Number:</label>{" "}
+          <input type="text" value={membershipNo} readOnly required />{" "}
         </div>
         <div>
           <label>Subject:</label>
