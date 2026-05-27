@@ -23,32 +23,56 @@ import "./styles/Home.css";
 const Home = () => {
   const slides = [
     {
-      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773748205/HR-4_jpuawn.webp",
+      // previously this image from the DHS cloudinary account
+      //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773748205/HR-4_jpuawn.webp",
+
+      // thia image from the DEScloudinary account
+      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874405/HR-4_jpuawn_yytnfa.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp",
+      // previously this image was from the DHS cloudinary account
+      //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp",
+      
+      // this image from the DES cloudinary account
+      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874002/HR-2_gtni0a_bxmneo.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-9_plj1wc.webp",
+      // previously this image from the DHS cloudinary account
+      //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-9_plj1wc.webp",
+      
+      // this image from the DES cloudinary account
+      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874336/HR-9_plj1wc_p0vwhd.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp",
+      // previously this image fro the DHS cloudinary account
+      //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp",
+      
+      // this image from the DES cloudinary account
+      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874642/HR-10_fmshtd_lszygk.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-11_yrhtkw.webp",
+      // previously this image from the DHS cloudinary account
+      //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-11_yrhtkw.webp",
+
+      // this image from the DES cloudinary account
+      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874641/HR-11_yrhtkw_qgcc1r.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
-      image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-12_smbpfv.webp",
+      // previously this image from the DHS cloudinary account
+      //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-12_smbpfv.webp",
+
+      // this image from the DES cloudinary account
+      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874641/HR-11_yrhtkw_qgcc1r.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
@@ -238,7 +262,12 @@ const Home = () => {
                     <div className="image-box">
                       <figure className="image relative">
                         <img
-                          src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp"
+                          // previously this image from the DHS cloudinary account
+                          //src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp"
+                          
+                          // this image from the DEScloudinary account
+                          src="https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874642/HR-10_fmshtd_lszygk.webp"
+
                           alt="Defence Habitat Tapasihalli"
                           className="project-image"
                         />
@@ -300,7 +329,12 @@ const Home = () => {
                     <div className="image-box">
                       <figure className="image relative">
                         <img
-                          src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp"
+
+                          // previously this image from the DHS cloudinary account
+                          //src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp"
+
+                          // this image from the DES cloudinary account
+                          src="https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874002/HR-2_gtni0a_bxmneo.webp"
                           alt="Defence Habitat Tapasihalli"
                           className="project-image"
                         />

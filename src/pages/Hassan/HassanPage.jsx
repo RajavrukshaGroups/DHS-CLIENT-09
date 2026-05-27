@@ -216,7 +216,11 @@ const HassanPage = () => {
     <Container fluid className="marasandra-page">
       <div className="banner-hassan">
          <video autoPlay loop muted playsInline className="hero-bg">
-            <source src="https://res.cloudinary.com/dx7pz8dor/video/upload/v1773291864/VIDEO1_chbyd9.mp4" type="video/mp4" />
+          {/* // previously this video from the DHS cloudinary account 
+          // <source src="https://res.cloudinary.com/dx7pz8dor/video/upload/v1773291864/VIDEO1_chbyd9.mp4" type="video/mp4" /> */}
+
+           {/* New video from the DES cloudinary account */}
+          <source src="https://res.cloudinary.com/dxdgk4v3t/video/upload/v1779876700/VIDEO1_chbyd9_lwdpfd.mp4" />
           </video>
         <div className="banner-content-marasandra text-center md:-ml-20">
           <h1
@@ -370,7 +374,11 @@ const HassanPage = () => {
             }}
           >
             <source
-              src="https://res.cloudinary.com/dx7pz8dor/video/upload/v1773291876/VIDEO2_lakerg.mp4"
+              // previously this video from the DHS cloudinary account
+              //src="https://res.cloudinary.com/dx7pz8dor/video/upload/v1773291876/VIDEO2_lakerg.mp4"
+
+              // New video from the DES cloudinary account
+              src="https://res.cloudinary.com/dxdgk4v3t/video/upload/v1779876799/VIDEO2_lakerg_doufr4.mp4"
               type="video/mp4"
             />
           </video>
@@ -386,7 +394,11 @@ const HassanPage = () => {
 
         <Modal.Body style={{textAlign:"center"}}>
           <img
-            src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773293150/LayoutPlan_IMage_xr0ihr.jpg"
+           // previously this image from DHS cloudinary account
+           // src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773293150/LayoutPlan_IMage_xr0ihr.jpg"
+
+           //New image from the DES cloudinary account
+           src="https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876489/LayoutPlan_IMage_xr0ihr_cjyn8p.jpg"
             alt="Layout"
             style={{width:"100%",borderRadius:"8px"}}
           />

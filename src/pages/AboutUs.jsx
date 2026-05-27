@@ -26,7 +26,11 @@ const AboutUs = () => {
 
   const slides = [
     { image: HR4, title: "ABOUT US" },
-    { image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp", title: "ABOUT US" },
+    // previously this image was from the DHS cloudinary account
+    //{ image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp", title: "ABOUT US" },
+
+    // this image from the DES cloudinary account
+    { image: "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874002/HR-2_gtni0a_bxmneo.webp", title: "ABOUT US" },
     { image: HR9, title: "ABOUT US" },
     { image: HR10, title: "ABOUT US" },
     { image: HR11, title: "ABOUT US" },
