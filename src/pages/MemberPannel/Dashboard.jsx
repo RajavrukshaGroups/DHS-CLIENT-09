@@ -40,8 +40,8 @@ const Dashboard = () => {
 
       try {
         const response = await axios.get(
-          `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/dashboard/${membershipNo}`,
-          // `http://localhost:4000/defenceWebsiteRoutes/dashboard/${membershipNo}`,
+          // `https://adminpanel.defencehousingsociety.com/defenceWebsiteRoutes/dashboard/${membershipNo}`,
+          `http://localhost:4000/defenceWebsiteRoutes/dashboard/${membershipNo}`,
         );
         if (response) {
           setMemberdata(response.data.data);
@@ -59,12 +59,12 @@ const Dashboard = () => {
   const handleViewConfirmation = async (userId) => {
     try {
       const res = await axios.get(
-        `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}?viewOnly=true`,
-        // `http://localhost:4000/receipt/view-confirmation/${userId}?viewOnly=true`,
+        // `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}?viewOnly=true`,
+        `http://localhost:4000/receipt/view-confirmation/${userId}?viewOnly=true`,
       );
 
-      const url = `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}?viewOnly=true`;
-      // const url = `http://localhost:4000/receipt/view-confirmation/${userId}?viewOnly=true`;
+      // const url = `https://adminpanel.defencehousingsociety.com/receipt/view-confirmation/${userId}?viewOnly=true`;
+      const url = `http://localhost:4000/receipt/view-confirmation/${userId}?viewOnly=true`;
       window.open(url, "_blank");
     } catch (error) {
       console.error("Error fetching site confirmation:", error);
@@ -73,8 +73,8 @@ const Dashboard = () => {
   };
 
   const handleShareCertificate = (receiptId) => {
-    // const url = `http://localhost:4000/receipt/get-share-certificate/${receiptId}?viewOnly=true`;
-    const url = `https://adminpanel.defencehousingsociety.com/receipt/get-share-certificate/${receiptId}?viewOnly=true`;
+    const url = `http://localhost:4000/receipt/get-share-certificate/${receiptId}?viewOnly=true`;
+    // const url = `https://adminpanel.defencehousingsociety.com/receipt/get-share-certificate/${receiptId}?viewOnly=true`;
     window.open(url, "_blank");
   };
 
@@ -102,7 +102,8 @@ const Dashboard = () => {
 
       window.open(url, "_blank");
     } else {
-      toast.error("Affidavit letter is not available yet.");
+      // toast.error("Affidavit letter is not available yet.");
+      toast.error("Affidavit letter is not applicable.");
     }
   };
 
