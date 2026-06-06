@@ -178,6 +178,18 @@ const PLOT_IMAGES = [
 ].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
 
 const CONSTRUCTION_IMAGES =[
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723185/WhatsApp_Image_2026-06-06_at_10.34.35_AM_auotkx.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723185/WhatsApp_Image_2026-06-06_at_10.34.35_AM_2_q8wzza.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.35_AM_1_jjy25t.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.34_AM_y8gu63.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.33_AM_kiqqr0.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.34_AM_2_vq00xg.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.31_AM_sex0tx.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.32_AM_2_gszo9s.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.34_AM_1_peienw.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.33_AM_1_roghjx.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723182/WhatsApp_Image_2026-06-06_at_10.34.32_AM_bifhdc.jpg",
+  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723182/WhatsApp_Image_2026-06-06_at_10.34.32_AM_1_oapsaa.jpg",
   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859706/thirdImage_ca7jfo.jpg",
   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859705/second_image_be65ku.jpg",
   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859704/imageSix_ju5pyq.jpg",
@@ -202,6 +214,10 @@ const CONSTRUCTION_IMAGES =[
   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872203/thirteen_oqpdov.jpg",
   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872206/seven_gz03kq.jpg"
 ].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
+const CONSTRUCTION_VIDEOS =[
+  "https://res.cloudinary.com/dxdgk4v3t/video/upload/v1780723183/WhatsApp_Video_2026-06-06_at_10.34.33_AM_oqu8ct.mp4",
+  "https://res.cloudinary.com/dxdgk4v3t/video/upload/v1780723183/WhatsApp_Video_2026-06-06_at_10.34.32_AM_mmvl8d.mp4"
+]
 export default function App() {
   /* -------------------------- STATE MANAGEMENT -------------------------- */
   const [activeCategory, setActiveCategory] = useState("plots");
@@ -577,6 +593,27 @@ export default function App() {
             </motion.div>
           )}
         </AnimatePresence>
+{activeCategory === "construction" && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="grid md:grid-cols-3 gap-6 mt-8"
+  >
+    {CONSTRUCTION_VIDEOS.map((src, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: idx * 0.05 }}
+        className="rounded-xl overflow-hidden shadow hover:shadow-xl group"
+      >
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <video src={src} controls className="w-full h-full object-cover" />
+        </div>
+      </motion.div>
+    ))}
+  </motion.div>
+)}
 
         {/* ----------------------- LOAD MORE ----------------------------- */}
         {!loading && loadedImages.length > 6 && (
