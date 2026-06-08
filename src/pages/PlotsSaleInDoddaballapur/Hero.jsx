@@ -90,7 +90,7 @@ import { Sparkles, Clock, Zap, Award, CheckCircle } from "lucide-react";
  */
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#031430] via-[#052354] to-slate-900 border-b border-[#c5a85c]/20 py-12 md:py-20 lg:py-24 px-4">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#031430] via-[#052354] to-slate-900 border-b border-[#c5a85c]/20 md:py-4 lg:py-8 px-4">
       {/* Abstract design vector spheres matching high class aesthetic (Base Gold: #c5a85c) */}
       <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#c5a85c]/5 rounded-full blur-3xl -mr-20 -mb-20 pointer-events-none"></div>
       <div className="absolute left-10 top-10 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -127,7 +127,7 @@ export default function HeroSection() {
           {/* Four circular horizontal features */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl pt-2">
             {[
-              "✓ Legally Approved",
+              "✓ 4 Easy instalments",
               "✓ High Appreciation",
               "✓ Modern Amenities",
               "✓ Excellent Connectivity"
@@ -161,7 +161,7 @@ export default function HeroSection() {
             </div>
 
             {/* Promo Context */}
-            <div className="pr-24 flex flex-col space-y-4">
+            <div className="pr-40 flex flex-col space-y-4">
               <h3 className="text-xl md:text-2xl font-serif font-bold text-[#c5a85c]">
                 Premium Plots
               </h3>

@@ -48,7 +48,44 @@ const DoddaballapurPlotsPage = () => {
       </section>
 
       {/* ===== 4. Why North Bangalore (Component + supporting text) ===== */}
+      {/* Main Display Heading */}
+          <div className="text-center mb-10">
+          {/* Gold Badge Header */}
+          <div className="inline-flex items-center justify-center gap-3 text-amber-600 tracking-wider text-xs md:text-sm font-bold font-display uppercase mb-3">
+            <div className="w-10 h-[1.5px] bg-[#d97706]/40" />
+            <span>• WHY NORTH BANGALORE •</span>
+            <div className="w-10 h-[1.5px] bg-[#d97706]/40" />
+          </div>
+
+          {/* Main Display Heading */}
+          <h1 className="font-display font-extrabold text-xl md:text-3xl text-[#24457b] max-w-5xl mx-auto leading-[1.12] tracking-tight">
+            Why North Bangalore is the<br className="hidden sm:inline" /> Preferred Real Estate Destination
+          </h1>
+
+          {/* Description Paragraph */}
+          <p className="max-w-4xl mx-auto text-slate-600 text-[14px] md:text-base leading-relaxed mt-5 font-normal px-4">
+            North Bangalore has transformed into a thriving residential and commercial hub. Major infrastructure projects, 
+            IT parks, Industrial (KIADB) developments, and improved road networks have significantly increased demand 
+            for plotted developments in the region.
+          </p>
+
+          {/* Elegant Custom Split Subline Segment under Description */}
+          <div className="flex justify-center mt-6">
+            <div className="flex w-16 h-[4px] rounded-full overflow-hidden shadow-sm">
+              <div className="w-1/2 bg-[#0b1b4f]" />
+              <div className="w-1/2 bg-amber-50" />
+            </div>
+          </div>
+        </div>
+
       <WhyNorthBangalore />
+
+       {/* SECTION HEADER BLOCK - EXACTLY LIKE IMAGE DESIGN */}
+       
+
+
+
+        
       {/* <section className="py-10 px-4 bg-[#f8f9fa]">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-700 font-semibold mb-4 text-lg">Some of the major advantages of investing in North Bangalore include:</p>

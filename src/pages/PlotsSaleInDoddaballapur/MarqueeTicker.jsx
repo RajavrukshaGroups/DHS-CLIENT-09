@@ -6,7 +6,7 @@ const MarqueeTicker = () => {
     "Premium Residential Plots for Sale in Doddaballapur – North Bangalore",
     "A Khata Plots · Gated Community · Legally Approved Layouts",
     "KHIR/KWIN City Projects – 2000 Acres Nearby",
-    "ITIR/SEZ (FOXCONN) – 300 Acres in the Zone",
+    "ITIR/SEZ (FOXCONN) – 10000 Acres in the Zone",
     "KIADB Industrial Area – 800 Acres Proximity",
     "Bookings Open Now – Invest in North Bangalore's Fastest-Growing Corridor!",
   ];

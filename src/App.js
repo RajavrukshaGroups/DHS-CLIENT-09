@@ -144,7 +144,7 @@ function MainApp() {
           <Route path="/otpverification" element={<Otpverification />} />
           <Route path="/forgotPassword" element={<VerifyForgotPassword />} />
           <Route path="/copy-right-policy" element={<CopyrightPolicy />} />
-          {/* <Route path="/plots-for-sale-in-doddaballapur" element={<PlotsForSaleInDoddaballapur />} /> */}
+          <Route path="/plots-for-sale-in-doddaballapur" element={<PlotsForSaleInDoddaballapur />} />
           <Route path="*" element={<Error />} />
         </Routes>
           

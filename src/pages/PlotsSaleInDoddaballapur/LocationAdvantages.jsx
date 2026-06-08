@@ -27,7 +27,7 @@ const leftPoints = [
   },
   {
     icon: <FaGlobe className="text-blue-500 text-lg mt-0.5 shrink-0" />,
-    text: "ITIR / SEZ (FOXCONN) – 300 Acres investment zone.",
+    text: "ITIR / SEZ (FOXCONN) – 10000 Acres investment zone.",
   },
 ];
 
@@ -60,7 +60,7 @@ const LocationAdvantages = () => {
           <h2
             className="text-3xl md:text-4xl font-extrabold text-center text-[#24457b] mb-12"
           >
-            Residential Plots for Sale in Doddaballapur
+            Residential Plots For Sale In Doddaballapur
           </h2>
           <div className="w-20 h-1 bg-yellow-900 mx-auto mt-3 rounded-full" />
         </div>
@@ -77,7 +77,7 @@ const LocationAdvantages = () => {
               Doddaballapur is strategically located in North Bangalore with
               excellent connectivity to Kempegowda International Airport, major
               IT and industrial zones including KHIR/KWIN City Projects (2000
-              Acres), ITIR/SEZ – FOXCONN (300 Acres), and KIADB (800 Acres).
+              Acres), ITIR/SEZ – FOXCONN (10000 Acres), and KIADB (800 Acres).
               This positioning ensures effortless travel and strong property
               value growth.
             </p>
@@ -175,7 +175,7 @@ const LocationAdvantages = () => {
 
     {/* Industrial Zones Badges */}
     <div className="flex flex-wrap justify-center gap-3 mb-12">
-      {['KHIR/KWIN CITY (2000 ACRES)', 'ITIR/SEZ - FOXCONN (300 ACRES)', 'KIADB (800 ACRES)'].map((zone, idx) => (
+      {['KHIR/KWIN CITY (2000 ACRES)', 'ITIR/SEZ - FOXCONN (10000 ACRES)', 'KIADB (800 ACRES)'].map((zone, idx) => (
         <span key={idx} className="bg-[#24457b]/10 text-[#24457b] text-sm font-medium px-4 py-2 rounded-full">
           {zone}
         </span>
