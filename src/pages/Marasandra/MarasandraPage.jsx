@@ -23,6 +23,7 @@ import TermsAndConds from "./TermsConditions";
 import Amenities from "./Amenities";
 import PriceChart from "./PriceChart";
 import NearByPlaces from "./NearByPlaces";
+import { Helmet } from "react-helmet-async";
 
 const MarasandraPage = () => {
   const amenities = [
@@ -187,118 +188,143 @@ const MarasandraPage = () => {
     //   third_installment: "33,57,600",
     // },
   ];
-const newPriceChartData = [
-  {
-    dimension: "30X40",
-    price: "1999/-",
-    total_amount: "23,98,800",
-    down_payment: "7,19,640",
-    first_installment: "7,19,640",
-    second_installment: "4,79,760",
-    third_installment: "4,79,760",
-  },
-  {
-    dimension: "30X50",
-    price: "1999/-",
-    total_amount: "29,98,500",
-    down_payment: "8,99,550",
-    first_installment: "8,99,550",
-    second_installment: "5,99,700",
-    third_installment: "5,99,700",
-  },
-  {
-    dimension: "40X60",
-    price: "1999/-",
-    total_amount: "47,97,600",
-    down_payment: "14,39,280",
-    first_installment: "14,39,280",
-    second_installment: "9,59,520",
-    third_installment: "9,59,520",
-  },
-];
+  const newPriceChartData = [
+    {
+      dimension: "30X40",
+      price: "1999/-",
+      total_amount: "23,98,800",
+      down_payment: "7,19,640",
+      first_installment: "7,19,640",
+      second_installment: "4,79,760",
+      third_installment: "4,79,760",
+    },
+    {
+      dimension: "30X50",
+      price: "1999/-",
+      total_amount: "29,98,500",
+      down_payment: "8,99,550",
+      first_installment: "8,99,550",
+      second_installment: "5,99,700",
+      third_installment: "5,99,700",
+    },
+    {
+      dimension: "40X60",
+      price: "1999/-",
+      total_amount: "47,97,600",
+      down_payment: "14,39,280",
+      first_installment: "14,39,280",
+      second_installment: "9,59,520",
+      third_installment: "9,59,520",
+    },
+  ];
   return (
-    <Container fluid className="marasandra-page">
-      <div className="banner-marasandra">
-        <div className="banner-content-marasandra">
-          <h1
-            style={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: "45px",
-              fontFamily: "emoji",
-            }}
-          >
-            {" "}
-            DEFENCE HABITAT MARASANDRA
-          </h1>
-          {/* <h1 style={{color:'white'}}>MARASANDRA</h1> */}
-          <h3 style={{ color: "white", fontFamily: "emoji", fontSize: "28px" }}>
-            North Bangalore{" "}
-          </h3>
-          <h3 style={{ color: "white", fontFamily: "emoji", fontSize: "28px" }}>
-            {" "}
-            Yelahanka-Doddaballapura Main Road
-          </h3>
-        </div>
-        <div className="stamps">
-          <img src={Marasandra_seal} className="seals" alt="" title="" />
-        </div>
-      </div>
-      <Marquee className="marquee" direction="left" speed={50}>
-        <span>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Works
-          Will Be Executed As Per BMRDA/DPA Norms."
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Change
-          Of Land Use Process Is
-          Completed."&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Booking
-          are open for phace-2."
-        </span>
-        {/* <span>Change of land and conversion in progress.</span> */}
-      </Marquee>
-      <div className="subintro"  style={{ paddingLeft:"12px", paddingRight:"12px"}}>
-        <p>
-          "Introducing Defence Habitat Marasandra – your gateway to premier
-          living in the burgeoning urban extension of North Bangalore. Our
-          exclusive residential layout offers a perfect blend of modern
-          amenities and strategic location, ensuring a lifestyle of convenience
-          and luxury for homeowners and investors."
-        </p>
-      </div>
-      <NearByPlaces />
-      {/* Amenities Section */}
-      <Amenities amenities={amenities} />
+    <>
+      <Helmet>
+        <title>
+          Open Plots for Sale in Marasandra | Residential Plots Near Marasandra
+          – Defence Habitat Society
+        </title>
 
-      {/* Price Chart Section */}
-      <section
-        className="price-chart-section"
-        style={{
-          backgroundColor: "#f8f6fe",
-          marginBottom: "40px",
-          padding: "20px",
-          borderRadius: "8px",
-        }}
-      >
-        <PriceChart
-          // priceChartTableHeading={priceChartTableHeading}
-          // priceChartData={priceChartData}
-          priceChartTableHeading={priceChartTableHeading}
-          oldPriceChartData={oldPriceChartData}
-          newPriceChartData={newPriceChartData}
+        <meta
+          name="description"
+          content="Explore premium residential open plots for sale in Marasandra and nearby areas with Defence Habitat Society. Secure gated community plots in North Bangalore with modern amenities and great connectivity."
         />
-        {/* Terms and Conditions Section */}
-        <TermsAndConds />
-      </section>
-      {/* Bank Details Section */}
-      <section className="bank-details-section">
-        <Container>
-          <Card className="bank-details-card shadow-sm">
-            <BookingDetails />
-            <BankDetails bankAccountDetails={bankAccountDetails} />
-            <Process />
-          </Card>
-        </Container>
-      </section>
-    </Container>
+
+        <link
+          rel="canonical"
+          href="https://defencehousingsociety.com/projects/marasandra"
+        />
+      </Helmet>
+      <Container fluid className="marasandra-page">
+        <div className="banner-marasandra">
+          <div className="banner-content-marasandra">
+            <h1
+              style={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "45px",
+                fontFamily: "emoji",
+              }}
+            >
+              {" "}
+              DEFENCE HABITAT MARASANDRA
+            </h1>
+            {/* <h1 style={{color:'white'}}>MARASANDRA</h1> */}
+            <h3
+              style={{ color: "white", fontFamily: "emoji", fontSize: "28px" }}
+            >
+              North Bangalore{" "}
+            </h3>
+            <h3
+              style={{ color: "white", fontFamily: "emoji", fontSize: "28px" }}
+            >
+              {" "}
+              Yelahanka-Doddaballapura Main Road
+            </h3>
+          </div>
+          <div className="stamps">
+            <img src={Marasandra_seal} className="seals" alt="" title="" />
+          </div>
+        </div>
+        <Marquee className="marquee" direction="left" speed={50}>
+          <span>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Works
+            Will Be Executed As Per BMRDA/DPA Norms."
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Change
+            Of Land Use Process Is
+            Completed."&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Booking
+            are open for phace-2."
+          </span>
+          {/* <span>Change of land and conversion in progress.</span> */}
+        </Marquee>
+        <div
+          className="subintro"
+          style={{ paddingLeft: "12px", paddingRight: "12px" }}
+        >
+          <p>
+            "Introducing Defence Habitat Marasandra – your gateway to premier
+            living in the burgeoning urban extension of North Bangalore. Our
+            exclusive residential layout offers a perfect blend of modern
+            amenities and strategic location, ensuring a lifestyle of
+            convenience and luxury for homeowners and investors."
+          </p>
+        </div>
+        <NearByPlaces />
+        {/* Amenities Section */}
+        <Amenities amenities={amenities} />
+
+        {/* Price Chart Section */}
+        <section
+          className="price-chart-section"
+          style={{
+            backgroundColor: "#f8f6fe",
+            marginBottom: "40px",
+            padding: "20px",
+            borderRadius: "8px",
+          }}
+        >
+          <PriceChart
+            // priceChartTableHeading={priceChartTableHeading}
+            // priceChartData={priceChartData}
+            priceChartTableHeading={priceChartTableHeading}
+            oldPriceChartData={oldPriceChartData}
+            newPriceChartData={newPriceChartData}
+          />
+          {/* Terms and Conditions Section */}
+          <TermsAndConds />
+        </section>
+        {/* Bank Details Section */}
+        <section className="bank-details-section">
+          <Container>
+            <Card className="bank-details-card shadow-sm">
+              <BookingDetails />
+              <BankDetails bankAccountDetails={bankAccountDetails} />
+              <Process />
+            </Card>
+          </Container>
+        </section>
+      </Container>
+    </>
   );
 };
 

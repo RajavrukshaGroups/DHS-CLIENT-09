@@ -17,6 +17,7 @@ import Seal1 from "../images/msTAMP.png";
 import Logo from "../images/logo.png";
 // import Video from "../videos/most.mp4";
 import Marquee from "react-fast-marquee";
+import { Helmet } from "react-helmet-async";
 
 import "./styles/Home.css";
 
@@ -27,34 +28,38 @@ const Home = () => {
       //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773748205/HR-4_jpuawn.webp",
 
       // thia image from the DEScloudinary account
-      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874405/HR-4_jpuawn_yytnfa.webp",
+      image:
+        "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874405/HR-4_jpuawn_yytnfa.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
       // previously this image was from the DHS cloudinary account
       //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp",
-      
+
       // this image from the DES cloudinary account
-      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874002/HR-2_gtni0a_bxmneo.webp",
+      image:
+        "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874002/HR-2_gtni0a_bxmneo.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
       // previously this image from the DHS cloudinary account
       //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-9_plj1wc.webp",
-      
+
       // this image from the DES cloudinary account
-      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874336/HR-9_plj1wc_p0vwhd.webp",
+      image:
+        "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874336/HR-9_plj1wc_p0vwhd.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
     {
       // previously this image fro the DHS cloudinary account
       //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp",
-      
+
       // this image from the DES cloudinary account
-      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874642/HR-10_fmshtd_lszygk.webp",
+      image:
+        "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874642/HR-10_fmshtd_lszygk.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
@@ -63,7 +68,8 @@ const Home = () => {
       //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-11_yrhtkw.webp",
 
       // this image from the DES cloudinary account
-      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874641/HR-11_yrhtkw_qgcc1r.webp",
+      image:
+        "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874641/HR-11_yrhtkw_qgcc1r.webp",
       title: "ಡಿಫೆನ್ಸ್ ಹ್ಯಾಬಿಟಾಟ್ ಹೌಸಿಂಗ್\nಕೋ-ಆಪರೇಟಿವ್ ಸೊಸೈಟಿ ಲಿ.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
@@ -72,7 +78,8 @@ const Home = () => {
       //image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-12_smbpfv.webp",
 
       // this image from the DES cloudinary account
-      image:"https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874641/HR-11_yrhtkw_qgcc1r.webp",
+      image:
+        "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874641/HR-11_yrhtkw_qgcc1r.webp",
       title: "DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.",
       regNo: "Reg. No.:- HSG-3/64/HHS/53744",
     },
@@ -80,6 +87,19 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Premium Residential Open Villa Plots in Defence Habitat Society |
+          North Bangalore Gated Community Plots
+        </title>
+
+        <meta
+          name="description"
+          content="Explore premium residential open villa plots in Defence Habitat Society, North Bangalore. Gated community plots ideal for investment and luxury living with modern amenities and excellent connectivity."
+        />
+
+        <link rel="canonical" href="https://defencehousingsociety.com/" />
+      </Helmet>
       {/* Banner Section */}
       <section className="banner-style-two centred banner-section">
         <Carousel
@@ -145,23 +165,6 @@ const Home = () => {
           </h5>
         </Marquee>
         <div className="auto-container">
-          {/* <div className="row">
-                        <div className="col-md-6">
-                        <h2 style={{color:'#24457b'}}>DEFENCE HABITAT HOUSING CO-OPERATIVE SOCIETY LTD.</h2>
-
-                        </div>
-                        <div className="col-md-6">
-                            <p style={{textAlign:'justify'}}>
-                            Defence Habitat is a social service organization, functioning with an objective of promoting and facilitating to
-                            Serving and Retired Armed / Defence Forces as well as Para Military personnel. 
-                    
-                            </p>
-                            <div className="btn-box">
-                        <a href="/about-us" className="theme-btn btn-one btn">Read More</a>
-                    </div>
-                        </div>
-                    </div> */}
-
           <div className="sec-title centred">
             <h4
               style={{
@@ -202,58 +205,6 @@ const Home = () => {
             {/* <h5>Features</h5> */}
             <h2 className="text-center">Our Ongoing Projects</h2>
           </div>
-
-          {/* <div className="container mt-2 text-center">
-            <div className="row justify-content-center">
-              {" "}
-              <div className="col-md-6">
-                <div className="feature-block-one">
-                  <div className="inner-box">
-                    <div className="image-box">
-                      <figure className="image relative">
-                        <img
-                          src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746137/HR-8_sjfesn.webp"
-                          alt="Defence Habitat Tapasihalli"
-                          className="project-image"
-                        />
-                      </figure>
-                      <div className="batch">
-                        <i className="icon-11"></i>
-                      </div>
-                    </div>
-                    <div className="lower-content">
-                      <div className="author-info clearfix">
-                        <figure className="author-thumb"></figure>
-                        <div className="mainatain">
-                          <div className="author-title text-center">
-                            {" "}
-                            <h6 className="project-title">
-                              Defence Habitat Marasandra Phase-2
-                            </h6>
-                            <span className="squarefit">
-                              <span style={{ fontSize: "16px" }}>Rs.</span> 1399
-                              <span style={{ fontSize: "16px" }}>/-sqft*</span>
-                              <p className="limited-booking blinkingText text-uppercase">
-                                bookings are open now
-                              </p>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="btn-boxs">
-                        <a
-                          href="/projects/marasandra"
-                          className="theme-btn btn-one btn"
-                        >
-                          See Details
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
           <div className="container mt-2 ">
             <div className="row">
               <div className="col-md-6">
@@ -264,10 +215,9 @@ const Home = () => {
                         <img
                           // previously this image from the DHS cloudinary account
                           //src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809118/HR-10_fmshtd.webp"
-                          
+
                           // this image from the DEScloudinary account
                           src="https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874642/HR-10_fmshtd_lszygk.webp"
-
                           alt="Defence Habitat Tapasihalli"
                           className="project-image"
                         />
@@ -329,7 +279,6 @@ const Home = () => {
                     <div className="image-box">
                       <figure className="image relative">
                         <img
-
                           // previously this image from the DHS cloudinary account
                           //src="https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp"
 
@@ -392,116 +341,55 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-
-               {/* <div className="col-md-6">
-                <div className="feature-block-one">
-                  <div className="inner-box">
-                    <div className="image-box">
-                      <figure className="image relative">
-                        <img
-                          src={HR2}
-                          alt="Defence Habitat Tapasihalli"
-                          className="project-image"
-                        />
-                        <img
-                          src={Hassan_seal}
-                          alt="Seal"
-                          className="project-seal"
-                        />
-                      </figure>
-                      <div className="batch">
-                        <i className="icon-11"></i>
-                      </div>
-                    </div>
-                    <div className="lower-content">
-                      <div className="author-info clearfix">
-                        <figure className="author-thumb">
-                        
-                        </figure>
-                        <div className="mainatain">
-                          <div className="author-title">
-                            <h6 className="project-title">
-                             
-                              Defence Habitat Hassan{" "}
-                              <span className="squarefit">
-                                <span style={{ fontSize: "16px" }}>Rs.</span>
-                                1671
-                                <span style={{ fontSize: "16px" }}>
-                                  /-sqft*{" "}
-                                </span>
-                              </span>
-                              <p className="booking-text blink">
-                                
-                                <strong
-                                  style={{ fontSize: "larger", color: "green" }}
-                                >
-                                  Bookings Are Open Now!
-                                </strong>
-                              </p>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="btn-boxs">
-                        <a
-                          href="/projects/hassan"
-                          className="theme-btn btn-one btn"
-                        >
-                          See Details
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-
             </div>
           </div>
         </div>
       </section>
-      {/* <Marquee
-        className="marquee"
-        direction="left"
-        speed={50}
-        style={{ backgroundColor: "#24457b", marginBottom: "2rem" }}
-      >
-        <h5>
-          "Bookings now open at Defence Habitat Marasandra Phase-2, Hurry up
-          book your plot now!"
-        </h5>
-      </Marquee> */}
 
       {/* Video Section */}
-     <section className="video-section">
-  <div className="container">
-    <div className="row align-items-center">
-      <div className="col-12 col-md-6 mb-4 mb-md-0">
-        <div className="sec-title">
-          <h2 style={{ marginBottom:"23px"}}>Most Popular Places</h2>
-          <p>
-            Our project is strategically located at North Bangalore, the
-            Exclusive part of Bangalore where land value, investor
-            sentiment, business opportunities and career respects – all
-            are heading north!
-          </p>
+      <section className="video-section">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-6 mb-4 mb-md-0">
+              <div className="sec-title">
+                <h2 style={{ marginBottom: "23px" }}>Most Popular Places</h2>
+                <p>
+                  Our project is strategically located at North Bangalore, the
+                  Exclusive part of Bangalore where land value, investor
+                  sentiment, business opportunities and career respects – all
+                  are heading north!
+                </p>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div
+                className="video-box"
+                style={{
+                  position: "relative",
+                  paddingBottom: "56.25%",
+                  height: 0,
+                }}
+              >
+                <iframe
+                  src="https://www.youtube.com/embed/060g2WazuXo?si=Huu6pEskdKxO9TH8"
+                  title="YouTube video player"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="col-12 col-md-6">
-        <div className="video-box" style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
-          <iframe
-            src="https://www.youtube.com/embed/060g2WazuXo?si=Huu6pEskdKxO9TH8"
-            title="YouTube video player"
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            referrerPolicy="strict-origin-when-cross-origin"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
     </>
   );
 };

@@ -18,6 +18,7 @@ import Process from "./Process";
 import TermsCond from "./TermsCondtions";
 import Amenities from "./Amenities";
 import NearByPlaces from "./NearByPlaces";
+import { Helmet } from "react-helmet-async";
 
 const TapasihalliPage = () => {
   const amenities = [
@@ -106,7 +107,7 @@ const TapasihalliPage = () => {
   //   },
   // ];
 
-   const oldPriceChartData = [
+  const oldPriceChartData = [
     {
       dimension: "30X40",
       price: "1399/-",
@@ -167,35 +168,34 @@ const TapasihalliPage = () => {
   // ];
 
   const newPriceChartData = [
-  {
-    dimension: "30X40",
-    price: "1699/-",
-    total_amount: "20,38,800",
-    down_payment: "6,11,640",
-    first_installment: "6,11,640",
-    second_installment: "4,07,760",
-    third_installment: "4,07,760",
-  },
-  {
-    dimension: "30X50",
-    price: "1699/-",
-    total_amount: "25,48,500",
-    down_payment: "7,64,550",
-    first_installment: "7,64,550",
-    second_installment: "5,09,700",
-    third_installment: "5,09,700",
-  },
-  {
-    dimension: "40X60",
-    price: "1699/-",
-    total_amount: "40,77,600",
-    down_payment: "12,23,280",
-    first_installment: "12,23,280",
-    second_installment: "8,15,520",
-    third_installment: "8,15,520",
-  },
-];
-
+    {
+      dimension: "30X40",
+      price: "1699/-",
+      total_amount: "20,38,800",
+      down_payment: "6,11,640",
+      first_installment: "6,11,640",
+      second_installment: "4,07,760",
+      third_installment: "4,07,760",
+    },
+    {
+      dimension: "30X50",
+      price: "1699/-",
+      total_amount: "25,48,500",
+      down_payment: "7,64,550",
+      first_installment: "7,64,550",
+      second_installment: "5,09,700",
+      third_installment: "5,09,700",
+    },
+    {
+      dimension: "40X60",
+      price: "1699/-",
+      total_amount: "40,77,600",
+      down_payment: "12,23,280",
+      first_installment: "12,23,280",
+      second_installment: "8,15,520",
+      third_installment: "8,15,520",
+    },
+  ];
 
   const bankAccountDetails = [
     {
@@ -210,77 +210,100 @@ const TapasihalliPage = () => {
   ];
 
   return (
-    <Container fluid className="tapasihalli-page">
-      <div className="banner-tapasihalli">
-        <div className="banner-content-tapasihalli">
-          <h1
-            style={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: "45px",
-              fontFamily: "emoji",
-            }}
-          >
-            DEFENCE HABITAT - TAPASIHALLI
-          </h1>
-          <h3 style={{ color: "white", fontFamily: "emoji", fontSize: "28px" }}>
-            North Bangalore , Doddaballapura .
-          </h3>
-        </div>
-        <div className="stamps">
-          <img
-            src={Tapasihalli_seal}
-            className="seals"
-            alt="Tapasihalli Seal"
-            style={{ zIndex: "-1" }}
-          />
-        </div>
-      </div>
+    <>
+      <Helmet>
+        <title>
+          Open Plots for Sale in Tapasihalli | Residential Plots Near
+          Tapasihalli – Defence Habitat Society
+        </title>
 
-      <Marquee className="marquee" direction="left" speed={50}>
-        <span className="text-capitalize">
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Work Will
-          Be Executed As Per DPA Norms."
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Change
-          Of Land Use Process is Completed."
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Booking
-          are open for phase-2."
-        </span>
-      </Marquee>
-
-      <div className="subintro" style={{ paddingLeft:"12px", paddingRight:"12px"}}>
-        <p>
-          "Introducing Defence Habitat Tapasihalli, an exceptional residential
-          layout project located in the rapidly developing area of North
-          Bangalore. Designed to meet the needs of modern living, our project
-          offers an ideal blend of tranquility and connectivity, making it the
-          perfect choice for discerning homebuyers and investors alike."
-        </p>
-      </div>
-
-      <NearByPlaces />
-
-      <Amenities amenities={amenities} />
-
-      <section className="price-chart-section">
-        <PriceChart
-          priceChartTableHeading={priceChartTableHeading}
-          oldPriceChartData={oldPriceChartData}
-          newPriceChartData={newPriceChartData}
+        <meta
+          name="description"
+          content="Discover premium residential open plots for sale in Tapasihalli and near Tapasihalli by Defence Habitat Society. Gated community plots with modern amenities and excellent connectivity in North Bangalore."
         />
-        <TermsCond />
-      </section>
 
-      <section className="bank-details-section">
-        <Container>
-          <Card className="bank-details-card shadow-sm">
-            <BookingDetails />
-            <BankDetails bankAccountDetails={bankAccountDetails} />
-            <Process />
-          </Card>
-        </Container>
-      </section>
-    </Container>
+        <link
+          rel="canonical"
+          href="https://defencehousingsociety.com/projects/tapasihalli"
+        />
+      </Helmet>
+      <Container fluid className="tapasihalli-page">
+        <div className="banner-tapasihalli">
+          <div className="banner-content-tapasihalli">
+            <h1
+              style={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "45px",
+                fontFamily: "emoji",
+              }}
+            >
+              DEFENCE HABITAT - TAPASIHALLI
+            </h1>
+            <h3
+              style={{ color: "white", fontFamily: "emoji", fontSize: "28px" }}
+            >
+              North Bangalore , Doddaballapura .
+            </h3>
+          </div>
+          <div className="stamps">
+            <img
+              src={Tapasihalli_seal}
+              className="seals"
+              alt="Tapasihalli Seal"
+              style={{ zIndex: "-1" }}
+            />
+          </div>
+        </div>
+
+        <Marquee className="marquee" direction="left" speed={50}>
+          <span className="text-capitalize">
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Work
+            Will Be Executed As Per DPA Norms."
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Change
+            Of Land Use Process is Completed."
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            "Booking are open for phase-2."
+          </span>
+        </Marquee>
+
+        <div
+          className="subintro"
+          style={{ paddingLeft: "12px", paddingRight: "12px" }}
+        >
+          <p>
+            "Introducing Defence Habitat Tapasihalli, an exceptional residential
+            layout project located in the rapidly developing area of North
+            Bangalore. Designed to meet the needs of modern living, our project
+            offers an ideal blend of tranquility and connectivity, making it the
+            perfect choice for discerning homebuyers and investors alike."
+          </p>
+        </div>
+
+        <NearByPlaces />
+
+        <Amenities amenities={amenities} />
+
+        <section className="price-chart-section">
+          <PriceChart
+            priceChartTableHeading={priceChartTableHeading}
+            oldPriceChartData={oldPriceChartData}
+            newPriceChartData={newPriceChartData}
+          />
+          <TermsCond />
+        </section>
+
+        <section className="bank-details-section">
+          <Container>
+            <Card className="bank-details-card shadow-sm">
+              <BookingDetails />
+              <BankDetails bankAccountDetails={bankAccountDetails} />
+              <Process />
+            </Card>
+          </Container>
+        </section>
+      </Container>
+    </>
   );
 };
 

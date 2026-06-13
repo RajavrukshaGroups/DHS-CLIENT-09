@@ -13,6 +13,7 @@ import { Filter } from "bad-words";
 import Loader from "../utils/loader";
 import "./styles/ContactUs.css";
 import location from "../images/qrcode.png";
+import { Helmet } from "react-helmet-async";
 
 const ContactUs = () => {
   const {
@@ -95,149 +96,169 @@ const ContactUs = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <Container fluid className="contactus">
-      {isLoading && <Loader />}
-      <div className="banner-contact">
-        <div className="banner-content-contact">
-          <h1 style={{ color: "white", fontWeight: "bold" }}>Contact Us</h1>
+    <>
+      <Helmet>
+        <title>Contact Us | Defence Housing Society</title>
+
+        <meta
+          name="description"
+          content="Get in touch with Defence Housing Society for inquiries, support, membership information. Contact our team today."
+        />
+
+        <link
+          rel="canonical"
+          href="https://defencehousingsociety.com/contact-us"
+        />
+      </Helmet>
+
+      <Container fluid className="contactus">
+        {isLoading && <Loader />}
+        <div className="banner-contact">
+          <div className="banner-content-contact">
+            <h1 style={{ color: "white", fontWeight: "bold" }}>Contact Us</h1>
+          </div>
         </div>
-      </div>
 
-      <Container fluid className="contact-content">
-        <h2 style={{ textAlign: "center", fontSize: "25px" }}>
-          "Get in touch with us today to find out how we can help you with all
-          your real estate needs."
-        </h2>
-        <Row className="contact-form-details-row">
-          <Col md={6} className="contact-form-col">
-            <div className="contact-form-container">
-              <p style={{ textAlign: "center", fontSize: "25px" }}>
-                Get in Contact with Our Team
-              </p>
-              <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      {...register("name", {
-                        required: "Name is required",
-                        // validate: validateNoProfanity,
-                      })}
-                      onChange={(e) =>
-                        handleProfanityCheck("name", e.target.value)
-                      }
-                    />
-                    {errors.name && (
-                      <p className="error-message">{errors.name.message}</p>
-                    )}
-                    {fieldErrors.name && (
-                      <p className="error-message">{fieldErrors.name}</p>
-                    )}
+        <Container fluid className="contact-content">
+          <h2 style={{ textAlign: "center", fontSize: "25px" }}>
+            "Get in touch with us today to find out how we can help you with all
+            your real estate needs."
+          </h2>
+          <Row className="contact-form-details-row">
+            <Col md={6} className="contact-form-col">
+              <div className="contact-form-container">
+                <p style={{ textAlign: "center", fontSize: "25px" }}>
+                  Get in Contact with Our Team
+                </p>
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="contact-form"
+                >
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="name">Name</label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        {...register("name", {
+                          required: "Name is required",
+                          // validate: validateNoProfanity,
+                        })}
+                        onChange={(e) =>
+                          handleProfanityCheck("name", e.target.value)
+                        }
+                      />
+                      {errors.name && (
+                        <p className="error-message">{errors.name.message}</p>
+                      )}
+                      {fieldErrors.name && (
+                        <p className="error-message">{fieldErrors.name}</p>
+                      )}
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="phone">Phone Number</label>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="text"
+                        {...register("phone", {
+                          required: "Phone number is required",
+                          pattern: {
+                            value: /^\d{10}$/,
+                            message: "Phone number must be exactly 10 digits",
+                          },
+                        })}
+                      />
+                      {errors.phone && (
+                        <p className="error-message">{errors.phone.message}</p>
+                      )}
+                    </div>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="text"
-                      {...register("phone", {
-                        required: "Phone number is required",
-                        pattern: {
-                          value: /^\d{10}$/,
-                          message: "Phone number must be exactly 10 digits",
-                        },
-                      })}
-                    />
-                    {errors.phone && (
-                      <p className="error-message">{errors.phone.message}</p>
-                    )}
-                  </div>
-                </div>
 
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      {...register("email", {
-                        required: "Email is required",
-                        pattern: {
-                          value: /^\S+@\S+$/i,
-                          message: "Invalid email address",
-                        },
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="email">Email</label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        {...register("email", {
+                          required: "Email is required",
+                          pattern: {
+                            value: /^\S+@\S+$/i,
+                            message: "Invalid email address",
+                          },
+                          // validate:validateNoProfanity
+                        })}
+                        onChange={(e) =>
+                          handleProfanityCheck("email", e.target.value)
+                        }
+                      />
+                      {errors.email && (
+                        <p className="error-message">{errors.email.message}</p>
+                      )}
+                      {fieldErrors.email && (
+                        <p className="error-message">{fieldErrors.email}</p>
+                      )}
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="subject">Subject</label>
+                      <input
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        {...register("subject", {
+                          required: "Subject is required",
+                          // validate: validateNoProfanity,
+                        })}
+                        onChange={(e) =>
+                          handleProfanityCheck("subject", e.target.value)
+                        }
+                      />
+                      {errors.subject && (
+                        <p className="error-message">
+                          {errors.subject.message}
+                        </p>
+                      )}
+                      {fieldErrors.subject && (
+                        <p className="error-message">{fieldErrors.subject}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="form-group full-width">
+                    <label htmlFor="message">Message</label>
+                    <textarea
+                      style={{ resize: "none" }}
+                      id="message"
+                      name="message"
+                      {...register("message", {
+                        required: "Message is required",
                         // validate:validateNoProfanity
                       })}
                       onChange={(e) =>
-                        handleProfanityCheck("email", e.target.value)
+                        handleProfanityCheck("message", e.target.value)
                       }
-                    />
-                    {errors.email && (
-                      <p className="error-message">{errors.email.message}</p>
+                    ></textarea>
+                    {errors.message && (
+                      <p className="error-message">{errors.message.message}</p>
                     )}
-                    {fieldErrors.email && (
-                      <p className="error-message">{fieldErrors.email}</p>
+                    {fieldErrors.message && (
+                      <p className="error-message">{fieldErrors.message}</p>
                     )}
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="subject">Subject</label>
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      {...register("subject", {
-                        required: "Subject is required",
-                        // validate: validateNoProfanity,
-                      })}
-                      onChange={(e) =>
-                        handleProfanityCheck("subject", e.target.value)
-                      }
+
+                  <div>
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      // sitekey="6LequKcrAAAAAKR_okRav96T4sMTa5FBs9s9JURL"
+                      sitekey="6LfarqkrAAAAAFUBBVCodI4OdoTheC6uB1hdtITz"
+                      onChange={(value) => setCaptchaValue(value)}
                     />
-                    {errors.subject && (
-                      <p className="error-message">{errors.subject.message}</p>
-                    )}
-                    {fieldErrors.subject && (
-                      <p className="error-message">{fieldErrors.subject}</p>
-                    )}
                   </div>
-                </div>
 
-                <div className="form-group full-width">
-                  <label htmlFor="message">Message</label>
-                  <textarea
-                    style={{ resize: "none" }}
-                    id="message"
-                    name="message"
-                    {...register("message", {
-                      required: "Message is required",
-                      // validate:validateNoProfanity
-                    })}
-                    onChange={(e) =>
-                      handleProfanityCheck("message", e.target.value)
-                    }
-                  ></textarea>
-                  {errors.message && (
-                    <p className="error-message">{errors.message.message}</p>
-                  )}
-                  {fieldErrors.message && (
-                    <p className="error-message">{fieldErrors.message}</p>
-                  )}
-                </div>
-
-                <div>
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    // sitekey="6LequKcrAAAAAKR_okRav96T4sMTa5FBs9s9JURL"
-                    sitekey="6LfarqkrAAAAAFUBBVCodI4OdoTheC6uB1hdtITz"
-                    onChange={(value) => setCaptchaValue(value)}
-                  />
-                </div>
-
-                {/* <div className="form-group checkbox-group">
+                  {/* <div className="form-group checkbox-group">
                   <label className="checkbox-label">
                     <input
                       style={{ marginTop: "5px" }}
@@ -289,139 +310,140 @@ const ContactUs = () => {
                   )}
                 </div> */}
 
-                <div className="form-group checkbox-group">
-                  <label className="checkbox-label">
-                    <input
-                      style={{ marginTop: "5px" }}
-                      type="checkbox"
-                      name="declaration"
-                      {...register("declaration", {
-                        required: "You must declare",
-                      })}
-                    />
-                    <span className="checkbox-text">
-                      I accept the{" "}
-                      <a href="/terms-conditions">Terms and Conditions</a> and{" "}
-                      <a href="privacy-policy">Privacy Policy</a>.
-                    </span>
-                  </label>
-                  {errors.declaration && (
-                    <p className="error-message">
-                      {errors.declaration.message}
-                    </p>
-                  )}
-                </div>
+                  <div className="form-group checkbox-group">
+                    <label className="checkbox-label">
+                      <input
+                        style={{ marginTop: "5px" }}
+                        type="checkbox"
+                        name="declaration"
+                        {...register("declaration", {
+                          required: "You must declare",
+                        })}
+                      />
+                      <span className="checkbox-text">
+                        I accept the{" "}
+                        <a href="/terms-conditions">Terms and Conditions</a> and{" "}
+                        <a href="privacy-policy">Privacy Policy</a>.
+                      </span>
+                    </label>
+                    {errors.declaration && (
+                      <p className="error-message">
+                        {errors.declaration.message}
+                      </p>
+                    )}
+                  </div>
 
-                <button type="submit" className="submit-button">
-                  Send
-                </button>
-              </form>
-            </div>
-          </Col>
-          <Col md={6} className="contact-details-col">
-            <Card className="info-card">
-              <Card.Body>
-                <div className="contact-info-item">
-                  <h3>
-                    <FontAwesomeIcon
-                      icon={faMapMarkerAlt}
-                      size="2x"
-                      className="icon"
-                    />
-                    Address
-                  </h3>
-                  <p style={{ textAlign: "center" }}>
-                    Defence Habitat Housing Co-Operative Society Ltd.
-                    <br />
-                    {/* Behind Swathi Garden Hotel, E Block, Sahakarnagar,
-                    Bangalore. Karnataka - 560092 */}
-                    Behind Swathi Gardenia Hotel, Sahakarnagar E Block
-                    <br />
-                    Bangalore - 560092
-                  </p>
-                </div>
-
-                <div className="contact-info-item">
-                  <h3>
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      size="2x"
-                      className="icon"
-                    />
-                    Email
-                  </h3>
-                  <p style={{ textAlign: "center" }}>
-                    <a
-                      href="mailto:info@defencehousingsociety.com"
-                      className="fontemail"
-                    >
-                      mail@defencehousingsociety.com
-                    </a>
-                  </p>
-                </div>
-                <div className="contact-info-item">
-                  <h3>
-                    <FontAwesomeIcon
-                      icon={faPhone}
-                      size="2x"
-                      className="icon"
-                    />
-                    Phone
-                  </h3>
-                  <p style={{ textAlign: "center" }}>
-                    <a href="tel:080-29903931" className="fontemail">
-                      080 - 29903931
-                    </a>
-                  </p>
-                </div>
-              </Card.Body>
-            </Card>
-            <div className="scan-location">
-              <h2 className="scan-heading">
-                SCAN HERE FOR <br /> OFFICE LOCATION
-              </h2>
-              <div className="scan-image">
-                <img src={location} alt="Office Location QR Code" />
+                  <button type="submit" className="submit-button">
+                    Send
+                  </button>
+                </form>
               </div>
-            </div>
-          </Col>
-          {/* <iframe  id="Web Lead" src="https://account.solidperformers.com/capture_form_data/MTI3Mg==" border="0" style="border:0px;height:600px;width:100%"></iframe> */}
-        </Row>
+            </Col>
+            <Col md={6} className="contact-details-col">
+              <Card className="info-card">
+                <Card.Body>
+                  <div className="contact-info-item">
+                    <h3>
+                      <FontAwesomeIcon
+                        icon={faMapMarkerAlt}
+                        size="2x"
+                        className="icon"
+                      />
+                      Address
+                    </h3>
+                    <p style={{ textAlign: "center" }}>
+                      Defence Habitat Housing Co-Operative Society Ltd.
+                      <br />
+                      {/* Behind Swathi Garden Hotel, E Block, Sahakarnagar,
+                    Bangalore. Karnataka - 560092 */}
+                      Behind Swathi Gardenia Hotel, Sahakarnagar E Block
+                      <br />
+                      Bangalore - 560092
+                    </p>
+                  </div>
 
-        <Row className="map-row">
-          <Col md={6}>
-            <div className="map-address" style={{ paddingTop: "90px" }}></div>
-            <div className="map-container" style={{ paddingBottom: "70px" }}>
-              <iframe
-                className="iframe-container"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.61915046687!2d77.58879931482295!3d13.059896990797979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzM1LjYiTiA3N8KwMzUnMjcuNiJF!5e0!3m2!1sen!2sin!4v1636363430335"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                title="Defence Habitat Location"
-              ></iframe>
-            </div>
-          </Col>
-          <Col md={6}>
-            <div className="iframe-container crm-iframe-container">
-              <h2 style={{ textAlign: "center", fontSize: "25px" }}>
-                Solid Performers CRM
-              </h2>
+                  <div className="contact-info-item">
+                    <h3>
+                      <FontAwesomeIcon
+                        icon={faEnvelope}
+                        size="2x"
+                        className="icon"
+                      />
+                      Email
+                    </h3>
+                    <p style={{ textAlign: "center" }}>
+                      <a
+                        href="mailto:info@defencehousingsociety.com"
+                        className="fontemail"
+                      >
+                        mail@defencehousingsociety.com
+                      </a>
+                    </p>
+                  </div>
+                  <div className="contact-info-item">
+                    <h3>
+                      <FontAwesomeIcon
+                        icon={faPhone}
+                        size="2x"
+                        className="icon"
+                      />
+                      Phone
+                    </h3>
+                    <p style={{ textAlign: "center" }}>
+                      <a href="tel:080-29903931" className="fontemail">
+                        080 - 29903931
+                      </a>
+                    </p>
+                  </div>
+                </Card.Body>
+              </Card>
+              <div className="scan-location">
+                <h2 className="scan-heading">
+                  SCAN HERE FOR <br /> OFFICE LOCATION
+                </h2>
+                <div className="scan-image">
+                  <img src={location} alt="Office Location QR Code" />
+                </div>
+              </div>
+            </Col>
+            {/* <iframe  id="Web Lead" src="https://account.solidperformers.com/capture_form_data/MTI3Mg==" border="0" style="border:0px;height:600px;width:100%"></iframe> */}
+          </Row>
 
-              <iframe
-                id="WebLead"
-                src="https://account.solidperformers.com/capture_form_data/MTI3Mg=="
-                style={{ border: "0px", height: "650px", width: "100%" }}
-                title="Web Lead"
-                scrolling="no"
-              />
-            </div>
-          </Col>
-        </Row>
+          <Row className="map-row">
+            <Col md={6}>
+              <div className="map-address" style={{ paddingTop: "90px" }}></div>
+              <div className="map-container" style={{ paddingBottom: "70px" }}>
+                <iframe
+                  className="iframe-container"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.61915046687!2d77.58879931482295!3d13.059896990797979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzM1LjYiTiA3N8KwMzUnMjcuNiJF!5e0!3m2!1sen!2sin!4v1636363430335"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  title="Defence Habitat Location"
+                ></iframe>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="iframe-container crm-iframe-container">
+                <h2 style={{ textAlign: "center", fontSize: "25px" }}>
+                  Solid Performers CRM
+                </h2>
+
+                <iframe
+                  id="WebLead"
+                  src="https://account.solidperformers.com/capture_form_data/MTI3Mg=="
+                  style={{ border: "0px", height: "650px", width: "100%" }}
+                  title="Web Lead"
+                  scrolling="no"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </Container>
-    </Container>
+    </>
   );
 };
 

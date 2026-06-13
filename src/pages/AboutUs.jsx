@@ -12,6 +12,7 @@ import houseinhand from "../images/hand (1).png";
 import "animate.css/animate.min.css";
 // import aboutVideo from "../videos/Defence Habitat.mp4";
 import "./styles/AboutUs.css";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -30,7 +31,11 @@ const AboutUs = () => {
     //{ image: "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746129/HR-2_gtni0a.webp", title: "ABOUT US" },
 
     // this image from the DES cloudinary account
-    { image: "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874002/HR-2_gtni0a_bxmneo.webp", title: "ABOUT US" },
+    {
+      image:
+        "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874002/HR-2_gtni0a_bxmneo.webp",
+      title: "ABOUT US",
+    },
     { image: HR9, title: "ABOUT US" },
     { image: HR10, title: "ABOUT US" },
     { image: HR11, title: "ABOUT US" },
@@ -39,6 +44,22 @@ const AboutUs = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          About Us | Defence Habitat Society – Premium Gated Community Plots in
+          North Bangalore
+        </title>
+
+        <meta
+          name="description"
+          content="Learn more about Defence Habitat Society, offering premium residential open villa plots in gated communities across North Bangalore. Built for trust, quality, and modern living."
+        />
+
+        <link
+          rel="canonical"
+          href="https://defencehousingsociety.com/about-us"
+        />
+      </Helmet>
       {/* Banner Section */}
       {/* <section className="banner-style-two centred" style={{padding:'0rem'}}>
         <Carousel className="banners-carousel" interval={3000} fade>
@@ -165,32 +186,32 @@ const AboutUs = () => {
               {/* add here */}
 
               <div className="col-lg-5 col-md-10 col-sm-12 mb-4 image-column">
-              <div
-                className="video-wrapper"
-                style={{
-                  position: "relative",
-                  paddingBottom: "56.25%", // 16:9 aspect ratio
-                  height: 0,
-                  overflow: "hidden",
-                }}
-              >
-                <iframe
-                  src="https://www.youtube.com/embed/060g2WazuXo?si=Huu6pEskdKxO9TH8"
-                  title="YouTube video player"
+                <div
+                  className="video-wrapper"
                   style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
+                    position: "relative",
+                    paddingBottom: "56.25%", // 16:9 aspect ratio
+                    height: 0,
+                    overflow: "hidden",
                   }}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                ></iframe>
+                >
+                  <iframe
+                    src="https://www.youtube.com/embed/060g2WazuXo?si=Huu6pEskdKxO9TH8"
+                    title="YouTube video player"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ import newsPaper2 from "../images/newsPaper2.webp";
 import newsPaper3 from "../images/newsPaper3.webp";
 import newsPaper4 from "../images/newsPaper4.webp";
 import "./styles/latestnews.css";
+import { Helmet } from "react-helmet-async";
 
 const LatestNews = () => {
   const navigate = useNavigate();
@@ -17,10 +18,8 @@ const LatestNews = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const goToPlots = () => {
-  navigate("/gallery#plots");
-};
-
- 
+    navigate("/gallery#plots");
+  };
 
   const openLightbox = (image) => {
     setSelectedImage(image);
@@ -35,174 +34,208 @@ const LatestNews = () => {
   const timesExpoText = `Premium Living Meets Affordability in North Bengaluru — Defence Habitat Housing Co-operative Society Ltd (Regd Under Karnataka Co-op Society Act) ...`;
 
   return (
-    <Container fluid className="marasandra-page">
-      {/* Banner */}
-      <div className="banner-latest">
-        <div className="banner-content3">
-          <h1 style={{ color: "white", fontWeight: "bold" }}>
-            Latest News
-          </h1>
-        </div>
-      </div>
+    <>
+      <Helmet>
+        <title>
+          Defence Housing Society Latest News & Updates | Announcements &
+          Developments
+        </title>
 
-      {/* Marquee */}
-      <Marquee className="marquee" direction="left" speed={50}>
-        <span className="text-capitalize">
-          "DHS-Marasandra: Change of land use process is completed."
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          "DHS-Tapasihalli: DC conversion received."
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          "Bookings are now open for phase-2."
-        </span>
-      </Marquee>
+        <meta
+          name="description"
+          content="Stay updated with the latest Defence Housing Society news, project developments, member announcements, infrastructure updates, events, and important community information."
+        />
 
-      
+        <link
+          rel="canonical"
+          href="https://defencehousingsociety.com/latest-news"
+        />
 
-      {/* Additional Newspaper Images */}
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "12px",
-          marginTop: "20px",
-          justifyItems: "space-around",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "row",
-        }}
-      >
-        {/* previously these images from the DHS cloudinary account */}
-        {/* {["https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809984/newsPaper4_mgkwfv.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809983/newsPaper3_advjqu.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809984/newsPaper2_chlso4.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809982/times_expo_s4xpzz.png"].map((img, index) => ( */}
+        <meta
+          property="og:title"
+          content="Defence Housing Society Latest News & Updates | Announcements & Developments"
+        />
 
-        {/* these images from the DES cloudinary account */}
-        {[
-          "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876035/times_expo_s4xpzz_v8rp1w.png", 
-          "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876036/newsPaper3_advjqu_xu5bde.webp", 
-          "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876036/newsPaper2_chlso4_k0cevk.webp", 
-          "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876037/newsPaper4_mgkwfv_fysjh2.webp"
-          ].map((img, index) => (
+        <meta
+          property="og:description"
+          content="Stay updated with the latest Defence Housing Society news, project developments, member announcements, infrastructure updates, events, and important community information."
+        />
 
-          <div
-            key={index}
-            className="press-thumbnail"
-            style={{
-              cursor: "pointer",
-              flex: "1 1 250px",
-              maxWidth: "350px",
-             alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-              flexDirection: "column",
-            }}
-            onClick={() => openLightbox(img)}
-          >
-            <img
-              src={img}
-              alt="Newspaper"
-              style={{ width: "100%", height: "250px", }}
-            />
-            <p className="press-thumbnail-note mt-2 small">
-              Click the image to view larger
-            </p>
+        <meta
+          property="og:url"
+          content="https://defencehousingsociety.com/latest-news"
+        />
+
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <Container fluid className="marasandra-page">
+        {/* Banner */}
+        <div className="banner-latest">
+          <div className="banner-content3">
+            <h1 style={{ color: "white", fontWeight: "bold" }}>Latest News</h1>
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* LIGHTBOX */}
-      {lightboxOpen && (
+        {/* Marquee */}
+        <Marquee className="marquee" direction="left" speed={50}>
+          <span className="text-capitalize">
+            "DHS-Marasandra: Change of land use process is completed."
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            "DHS-Tapasihalli: DC conversion received."
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            "Bookings are now open for phase-2."
+          </span>
+        </Marquee>
+
+        {/* Additional Newspaper Images */}
         <div
-          onClick={closeLightbox}
           style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0,0,0,0.85)",
             display: "flex",
+            flexWrap: "wrap",
+            gap: "12px",
+            marginTop: "20px",
+            justifyItems: "space-around",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 9999,
-            padding: "20px",
-            cursor: "pointer",
+            flexDirection: "row",
           }}
         >
-          <img
-            src={selectedImage}
-            alt="Full View"
-            style={{
-              maxWidth: "95%",
-              maxHeight: "95vh",
-              objectFit: "contain",
-              borderRadius: "6px",
-              boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
-               
-            }}
-          />
+          {/* previously these images from the DHS cloudinary account */}
+          {/* {["https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809984/newsPaper4_mgkwfv.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809983/newsPaper3_advjqu.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809984/newsPaper2_chlso4.webp", "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773809982/times_expo_s4xpzz.png"].map((img, index) => ( */}
+
+          {/* these images from the DES cloudinary account */}
+          {[
+            "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876035/times_expo_s4xpzz_v8rp1w.png",
+            "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876036/newsPaper3_advjqu_xu5bde.webp",
+            "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876036/newsPaper2_chlso4_k0cevk.webp",
+            "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779876037/newsPaper4_mgkwfv_fysjh2.webp",
+          ].map((img, index) => (
+            <div
+              key={index}
+              className="press-thumbnail"
+              style={{
+                cursor: "pointer",
+                flex: "1 1 250px",
+                maxWidth: "350px",
+                alignItems: "center",
+                justifyContent: "center",
+                display: "flex",
+                flexDirection: "column",
+              }}
+              onClick={() => openLightbox(img)}
+            >
+              <img
+                src={img}
+                alt="Newspaper"
+                style={{ width: "100%", height: "250px" }}
+              />
+              <p className="press-thumbnail-note mt-2 small">
+                Click the image to view larger
+              </p>
+            </div>
+          ))}
         </div>
-      )}
 
-      <Card className="property-card-latest shadow-none border-0">
-        <Card.Body>
-          <div className="latest-news-layout">
-            <div className="latest-news-left">
-              <h2 className="ct">Latest News</h2>
-              <div className="title-divider"></div>
-              <div className="title-divider"></div>
-              <div className="flex flex-col sm:flex-row gap-3">
-              <div>
-                <h5 className="custom-bullet latest-news-line">
-                  Defence Habitat Marasandra - Rs.1,699/- sqft (Booking Closed)
-                </h5>
+        {/* LIGHTBOX */}
+        {lightboxOpen && (
+          <div
+            onClick={closeLightbox}
+            style={{
+              position: "fixed",
+              inset: 0,
+              background: "rgba(0,0,0,0.85)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 9999,
+              padding: "20px",
+              cursor: "pointer",
+            }}
+          >
+            <img
+              src={selectedImage}
+              alt="Full View"
+              style={{
+                maxWidth: "95%",
+                maxHeight: "95vh",
+                objectFit: "contain",
+                borderRadius: "6px",
+                boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+              }}
+            />
+          </div>
+        )}
 
-                <h5 className="custom-bullet latest-news-line">
-                  Defence Habitat Tapasihalli - Rs.1,399/- sqft (Booking Closed)
-                </h5>
+        <Card className="property-card-latest shadow-none border-0">
+          <Card.Body>
+            <div className="latest-news-layout">
+              <div className="latest-news-left">
+                <h2 className="ct">Latest News</h2>
+                <div className="title-divider"></div>
+                <div className="title-divider"></div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <div>
+                    <h5 className="custom-bullet latest-news-line">
+                      Defence Habitat Marasandra - Rs.1,699/- sqft (Booking
+                      Closed)
+                    </h5>
 
-                <h5 className="custom-bullet latest-news-line">
-                  Good News..!!! Applications for new membership are open now,
-                  Hurry up! Contact us for more information.
-                  <span className="latest-badge">New</span>
-                </h5>
+                    <h5 className="custom-bullet latest-news-line">
+                      Defence Habitat Tapasihalli - Rs.1,399/- sqft (Booking
+                      Closed)
+                    </h5>
 
-                <h5 className="custom-bullet latest-news-line">
-                  Defence Habitat Marasandra Phase-2 has launched - Rs.1,999/- sqft (Booking Opened)
-                  <span className="latest-badge">New</span>
-                </h5>
+                    <h5 className="custom-bullet latest-news-line">
+                      Good News..!!! Applications for new membership are open
+                      now, Hurry up! Contact us for more information.
+                      <span className="latest-badge">New</span>
+                    </h5>
 
-                <h5 className="custom-bullet latest-news-line">
-                  Defence Habitat Tapasihalli Phase-2 has launched - Rs.1,699/- sqft (Booking Opened)
-                  <span className="latest-badge">New</span>
-                </h5>
-              </div>
+                    <h5 className="custom-bullet latest-news-line">
+                      Defence Habitat Marasandra Phase-2 has launched -
+                      Rs.1,999/- sqft (Booking Opened)
+                      <span className="latest-badge">New</span>
+                    </h5>
 
-              <div>
-                <h5 className="custom-bullet latest-news-line">
-                  DHS-Tapasihalli: DPA/BMRDA approval received{" "}
-                  <a
-                    href={siteapproval}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pdf-link"
-                  >
-                    (View Site Approval)
-                  </a>
-                </h5>
+                    <h5 className="custom-bullet latest-news-line">
+                      Defence Habitat Tapasihalli Phase-2 has launched -
+                      Rs.1,699/- sqft (Booking Opened)
+                      <span className="latest-badge">New</span>
+                    </h5>
+                  </div>
 
-                <h5 className="custom-bullet latest-news-line">
-                  With the launch of Phase 2, we are adding even more to our project.
-                </h5>
+                  <div>
+                    <h5 className="custom-bullet latest-news-line">
+                      DHS-Tapasihalli: DPA/BMRDA approval received{" "}
+                      <a
+                        href={siteapproval}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="pdf-link"
+                      >
+                        (View Site Approval)
+                      </a>
+                    </h5>
 
-                 <h5 className="custom-bullet latest-news-line">
-                  DHS-Tapasihalli Phase 2 , Block 1{" "}
-                  <a
-                    // href={siteapproval}
-                    target="_blank"
-                    // rel="noopener noreferrer"
-                    onClick={goToPlots}
-                    className="pdf-link"
-                  >
-                    (View Plot Allotment)
-                  </a>
-                </h5>
-                {/* <div className=" mt-8 ml-6">
+                    <h5 className="custom-bullet latest-news-line">
+                      With the launch of Phase 2, we are adding even more to our
+                      project.
+                    </h5>
+
+                    <h5 className="custom-bullet latest-news-line">
+                      DHS-Tapasihalli Phase 2 , Block 1{" "}
+                      <a
+                        // href={siteapproval}
+                        target="_blank"
+                        // rel="noopener noreferrer"
+                        onClick={goToPlots}
+                        className="pdf-link"
+                      >
+                        (View Plot Allotment)
+                      </a>
+                    </h5>
+                    {/* <div className=" mt-8 ml-6">
                   <button
                     onClick={goToPlots}
                     className="bg-blue-900 text-white px-6 py-2 rounded-lg hover:scale-105 transition"
@@ -210,13 +243,12 @@ const LatestNews = () => {
                     View Plot Allotment
                   </button>
                 </div> */}
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            </div>
 
-            {/* RIGHT SIDE */}
-            {/* <div className="latest-news-right">
+              {/* RIGHT SIDE */}
+              {/* <div className="latest-news-right">
               <div className="press-coverage">
                 <div className="press-meta">
                   <span>Featured in</span>
@@ -246,11 +278,11 @@ const LatestNews = () => {
                 </div>
               </div>
             </div> */}
-          </div>
-        </Card.Body>
-      </Card>
-    </Container>
+            </div>
+          </Card.Body>
+        </Card>
+      </Container>
+    </>
   );
-
-}
+};
 export default LatestNews;
