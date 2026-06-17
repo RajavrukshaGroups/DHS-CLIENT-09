@@ -27,6 +27,33 @@ const DoddaballapurPlotsPage = () => {
           rel="canonical"
           href="https://defencehousingsociety.com/plots-for-sale-in-doddaballapur"
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id":
+                "https://defencehousingsociety.com/plots-for-sale-in-doddaballapur",
+            },
+            headline: "Plots for Sale in Doddaballapur",
+            image: ["https://defencehousingsociety.com/logo.png"],
+            author: {
+              "@type": "Organization",
+              name: "Defence Housing Society",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Defence Housing Society",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://defencehousingsociety.com/logo.png",
+              },
+            },
+            datePublished: "2026-06-17",
+            dateModified: "2026-06-17",
+          })}
+        </script>
       </Helmet>
 
       {/* ===== 1. Hero Banner ===== */}
