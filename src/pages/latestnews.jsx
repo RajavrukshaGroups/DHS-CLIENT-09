@@ -224,7 +224,8 @@ const LatestNews = () => {
                     </h5>
 
                     <h5 className="custom-bullet latest-news-line">
-                      DHS-Tapasihalli Phase 2 , Block 1{" "}
+                      {/* DHS-Tapasihalli Phase 2 , Block 1{" "} */}
+                      DHS-Tapasihalli Phase 1 , Block 1{" "}
                       <a
                         // href={siteapproval}
                         target="_blank"
