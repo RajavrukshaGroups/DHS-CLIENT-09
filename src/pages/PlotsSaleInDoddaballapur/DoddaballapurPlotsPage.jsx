@@ -10,6 +10,7 @@ import HeroSection from "./Hero";
 import "./DoddaballapurPlotsPage.css";
 import logo from "../../images/logo.png";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const DoddaballapurPlotsPage = () => {
   return (
@@ -76,11 +77,22 @@ const DoddaballapurPlotsPage = () => {
             of the most promising destinations for long-term growth. With rapid
             infrastructure development, excellent connectivity, and proximity to
             Kempegowda International Airport, the region has become a preferred
-            choice for residential investments. If you are searching for
-            Residential plots for sale in Doddaballapur, Gated community plots
-            for sale in North Bangalore, Defence Housing Society offers the
-            ideal opportunity to own premium land in one of Bangalore's
-            fastest-growing corridors.
+            choice for residential investments. If you are searching for{" "}
+            <Link
+              to="/"
+              className="font-bold text-[#24457b] hover:text-red-800 transition-colors"
+            >
+              Residential Plots for Sale in Doddaballapur
+            </Link>{" "}
+            or{" "}
+            <Link
+              to="/"
+              className="font-bold text-[#24457b] hover:text-red-800 transition-colors"
+            >
+              Gated Community Plots for Sale in North Bangalore
+            </Link>
+            , Defence Housing Society offers the ideal opportunity to own
+            premium land in one of Bangalore's fastest-growing corridors.
           </p>
           <p className="text-gray-600 mt-4 max-w-4xl mx-auto text-sm md:text-base leading-relaxed text-justify md:text-center">
             Whether you are planning to build your dream home or secure a
@@ -700,9 +712,14 @@ const DoddaballapurPlotsPage = () => {
               </div>
 
               <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
-                Defence Housing Society offers thoughtfully planned plotted
-                developments designed for modern living, long-term value, and
-                future growth.
+                <Link
+                  to="/"
+                  className="font-bold text-[#24457b] hover:text-red-800 transition-colors"
+                >
+                  Defence Housing Society
+                </Link>{" "}
+                offers thoughtfully planned plotted developments designed for
+                modern living, long-term value, and future growth.
               </p>
 
               {/* Highlight Box */}
