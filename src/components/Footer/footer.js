@@ -12,7 +12,9 @@ import {
   faMapMarkerAlt,
   faShieldAlt,
   faFileContract,
-  faCopyright, 
+  faCopyright,
+  faMap,
+  faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import "./footer.css"; // Custom CSS for additional styling
 
@@ -34,7 +36,10 @@ const Footer = () => {
           <div className="col-md-4" style={{ marginBottom: "2rem" }}>
             <h4 style={{ fontWeight: "900" }}>Contact Us</h4>
             <p style={{ marginTop: "1rem", color: "white" }}>
-              <FontAwesomeIcon icon={faMapMarkerAlt} style={{marginRight:"8px"}}/>
+              <FontAwesomeIcon
+                icon={faMapMarkerAlt}
+                style={{ marginRight: "8px" }}
+              />
               {/* Behind Swathi Garden
               Hotel, E Block, Sahakarnagar, Bangalore - 560092, Karnataka */}
               Behind Swathi Gardenia Hotel
@@ -85,6 +90,14 @@ const Footer = () => {
               <br />
               <a href="/copy-right-policy" className="footer-link">
                 <FontAwesomeIcon icon={faCopyright} /> Copy Right Policy
+              </a>
+              <br />
+              <a
+                href="/plots-for-sale-in-Doddaballapur"
+                className="footer-link"
+              >
+                <FontAwesomeIcon icon={faHouse} /> Plots for sale in
+                Doddaballapur
               </a>
             </div>
           </div>
