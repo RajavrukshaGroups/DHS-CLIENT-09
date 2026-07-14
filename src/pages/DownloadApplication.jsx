@@ -100,6 +100,10 @@ const DownloadApplication = () => {
                   placeholder="Enter your mobile number"
                   {...register("mobile", {
                     required: "Mobile number is required",
+                    pattern: {
+                      value: /^[1-9]\d{9}$/,
+                      message: "Mobile number must be exactly 10 digits and cannot start with 0",
+                    },
                   })}
                   className="form-control"
                 />

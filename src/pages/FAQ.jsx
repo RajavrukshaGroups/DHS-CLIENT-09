@@ -348,8 +348,8 @@ const FAQ = () => {
                         {...register("phone", {
                           required: "Phone number is required",
                           pattern: {
-                            value: /^\d{10}$/,
-                            message: "Phone number must be exactly 10 digits",
+                            value: /^[1-9]\d{9}$/,
+                            message: "Phone number must be exactly 10 digits and cannot start with 0",
                           },
                         })}
                       />
