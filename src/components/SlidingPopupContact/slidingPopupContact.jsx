@@ -27,6 +27,7 @@ const ContactFormPopup = ({ isGoogleAds = false }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === "phone" && value.length > 10) return;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -92,6 +93,11 @@ const ContactFormPopup = ({ isGoogleAds = false }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.phone.length !== 10 || formData.phone.startsWith("0")) {
+      toast.error("Invalid phone number. It must be 10 digits and cannot start with 0.");
+      return;
+    }
 
     if (!captchaValue) {
       toast.error("Please verify that you are not a robot!");

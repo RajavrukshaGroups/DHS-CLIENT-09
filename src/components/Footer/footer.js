@@ -93,7 +93,7 @@ const Footer = () => {
               </a>
               <br />
               <a
-                href="/plots-for-sale-in-Doddaballapur"
+                href="https://defencehousingsociety.co.in/"
                 className="footer-link"
               >
                 <FontAwesomeIcon icon={faHouse} /> Plots for sale in
