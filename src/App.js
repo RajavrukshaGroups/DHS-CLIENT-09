@@ -149,7 +149,7 @@ function MainApp() {
           <Route path="/otpverification" element={<Otpverification />} />
           <Route path="/forgotPassword" element={<VerifyForgotPassword />} />
           <Route path="/copy-right-policy" element={<CopyrightPolicy />} />
-          <Route path="/plots-for-sale-in-doddaballapur" element={<ExternalRedirect to="https://defencehousingsociety.co.in/" />} />
+          <Route path="/plots-for-sale-in-doddaballapur" element={<ExternalRedirect to="https://tapasihalli-defencehabitat.defencehousingsociety.com/" />} />
           <Route path="*" element={<Error />} />
         </Routes>
           
