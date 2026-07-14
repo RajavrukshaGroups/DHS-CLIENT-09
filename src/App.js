@@ -5,7 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -55,7 +55,12 @@ import TermsAndConditions from "./pages/TermsAndCondtions.jsx";
 import CopyrightPolicy from "./pages/CopyrightPolicy.jsx";
 
 import TopHeader from "./components/TopHeader.js";
-import PlotsForSaleInDoddaballapur from "./pages/PlotsSaleInDoddaballapur/DoddaballapurPlotsPage"
+function ExternalRedirect({ to }) {
+  useEffect(() => {
+    window.location.href = to;
+  }, [to]);
+  return null;
+}
 
 
 
@@ -144,7 +149,7 @@ function MainApp() {
           <Route path="/otpverification" element={<Otpverification />} />
           <Route path="/forgotPassword" element={<VerifyForgotPassword />} />
           <Route path="/copy-right-policy" element={<CopyrightPolicy />} />
-          {/* <Route path="/plots-for-sale-in-doddaballapur" element={<PlotsForSaleInDoddaballapur />} /> */}
+          <Route path="/plots-for-sale-in-doddaballapur" element={<ExternalRedirect to="https://defencehousingsociety.co.in/" />} />
           <Route path="*" element={<Error />} />
         </Routes>
           
