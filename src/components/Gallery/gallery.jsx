@@ -3,217 +3,163 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, Image as ImageIcon, HardHat, Camera, Sparkles } from "lucide-react";
 
  import Video from "../../videos/galleryjcb.mp4";
-// import One from "../Project_Images/two.jpg";
- //import Two from "../Project_Images/three.jpg";
-// import Three from "../Project_Images/four.jpg";
-// import Four from "../Project_Images/five.jpg";
-// import Five from "../Project_Images/DSC04739.jpg";
-// import Six from "../Project_Images/six.jpg";
-// import Seven from "../Project_Images/seven.JPG";
-// import Eight from "../Project_Images/eight.JPG";
-// import Nine from "../Project_Images/nine.JPG";
-// import thirteen from "../Project_Images/thirteen.JPG";
-// import ten from '../Project_Images/ten.JPG';
-// import twelve from "../Project_Images/twelve.JPG";
-// import RecentImgfirst from "../../images/galleryImages/first_image.jpg"
-// import RecentImgSecond from "../../images/galleryImages/second_image.jpg"
-// import RecentImgThird from "../../images/galleryImages/thirdImage.jpg"
-// import RecentImgFourth from "../../images/galleryImages/forthImage.jpg"
-// import RecentImgFifth from "../../images/galleryImages/fifthImage.jpg"
-// import RecentImgSixth from "../../images/galleryImages/imageSix.jpg"
+import One from "../Project_Images/two.jpg";
+ import Two from "../Project_Images/three.jpg";
+import Three from "../Project_Images/four.jpg";
+import Four from "../Project_Images/five.jpg";
+import Five from "../Project_Images/DSC04739.jpg";
+import Six from "../Project_Images/six.jpg";
+import Seven from "../Project_Images/seven.JPG";
+import Eight from "../Project_Images/eight.JPG";
+import Nine from "../Project_Images/nine.JPG";
+import thirteen from "../Project_Images/thirteen.JPG";
+import ten from '../Project_Images/ten.JPG';
+import twelve from "../Project_Images/twelve.JPG";
+import RecentImgfirst from "../../images/galleryImages/first_image.jpg"
+import RecentImgSecond from "../../images/galleryImages/second_image.jpg"
+import RecentImgThird from "../../images/galleryImages/thirdImage.jpg"
+import RecentImgFourth from "../../images/galleryImages/forthImage.jpg"
+import RecentImgFifth from "../../images/galleryImages/fifthImage.jpg"
+import RecentImgSixth from "../../images/galleryImages/imageSix.jpg"
 
-// import gallery6 from "../../images/galleryImages/gallery6.jpeg";
-// import gallery7 from "../../images/galleryImages/gallery7.jpeg";
-// import gallery8 from "../../images/galleryImages/gallery8.jpeg";
-// import gallery9 from "../../images/galleryImages/gallery9.jpeg";
-// import gallery10 from "../../images/galleryImages/gallery10.jpeg";
-// import gallery11 from "../../images/galleryImages/gallery11.jpeg";
-// import gallery12 from "../../images/galleryImages/gallery12.jpeg";
-// import gallery13 from "../../images/galleryImages/gallery13.jpeg";
-// import gallery14 from "../../images/galleryImages/gallery14.jpeg";
-// import gallery15 from "../../images/galleryImages/gallery15.jpeg";
-// import gallery16 from "../../images/galleryImages/gallery16.jpeg";
+import gallery6 from "../../images/galleryImages/gallery6.jpeg";
+import gallery7 from "../../images/galleryImages/gallery7.jpeg";
+import gallery8 from "../../images/galleryImages/gallery8.jpeg";
+import gallery9 from "../../images/galleryImages/gallery9.jpeg";
+import gallery10 from "../../images/galleryImages/gallery10.jpeg";
+import gallery11 from "../../images/galleryImages/gallery11.jpeg";
+import gallery12 from "../../images/galleryImages/gallery12.jpeg";
+import gallery13 from "../../images/galleryImages/gallery13.jpeg";
+import gallery14 from "../../images/galleryImages/gallery14.jpeg";
+import gallery15 from "../../images/galleryImages/gallery15.jpeg";
+import gallery16 from "../../images/galleryImages/gallery16.jpeg";
 
-// import gallery17 from "../../images/galleryImages/gallery17.webp";
-// import gallery18 from "../../images/galleryImages/gallery18.webp";
-// import gallery19 from "../../images/galleryImages/gallery19.webp";
-// import gallery20 from "../../images/galleryImages/gallery20.webp";
-// import gallery21 from "../../images/galleryImages/gallery21.jpeg";
-// import gallery22 from "../../images/galleryImages/gallery22.jpeg";
-// import gallery23 from "../../images/galleryImages/gallery23.jpeg";
-// import gallery24 from "../../images/galleryImages/gallery24.jpeg";
-// import gallery25 from "../../images/galleryImages/gallery25.jpeg";
-// import gallery26 from "../../images/galleryImages/gallery26.jpeg";
-// import gallery27 from "../../images/galleryImages/gallery27.jpeg";
-// import gallery28 from "../../images/galleryImages/gallery28.jpeg";
-// import gallery29 from "../../images/galleryImages/gallery29.jpeg";
-// import gallery30 from "../../images/galleryImages/gallery30.jpeg";
-// import gallery31 from "../../images/galleryImages/gallery31.jpeg";
-// import gallery32 from "../../images/galleryImages/gallery32.jpeg";
-// import gallery33 from "../../images/galleryImages/gallery33.jpeg";
+import gallery17 from "../../images/galleryImages/gallery17.webp";
+import gallery18 from "../../images/galleryImages/gallery18.webp";
+import gallery19 from "../../images/galleryImages/gallery19.webp";
+import gallery20 from "../../images/galleryImages/gallery20.webp";
+import gallery21 from "../../images/galleryImages/gallery21.jpeg";
+import gallery22 from "../../images/galleryImages/gallery22.jpeg";
+import gallery23 from "../../images/galleryImages/gallery23.jpeg";
+import gallery24 from "../../images/galleryImages/gallery24.jpeg";
+import gallery25 from "../../images/galleryImages/gallery25.jpeg";
+import gallery26 from "../../images/galleryImages/gallery26.jpeg";
+import gallery27 from "../../images/galleryImages/gallery27.jpeg";
+import gallery28 from "../../images/galleryImages/gallery28.jpeg";
+import gallery29 from "../../images/galleryImages/gallery29.jpeg";
+import gallery30 from "../../images/galleryImages/gallery30.jpeg";
+import gallery31 from "../../images/galleryImages/gallery31.jpeg";
+import gallery32 from "../../images/galleryImages/gallery32.jpeg";
+import gallery33 from "../../images/galleryImages/gallery33.jpeg";
 
-// /* -------------------------------------------------------------------------- */
-// /*                               IMAGE COLLECTIONS                            */
-// /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                               IMAGE COLLECTIONS                            */
+/* -------------------------------------------------------------------------- */
 
-// const PLOT_IMAGES = [
-//   gallery7,
-//   gallery9,
-//   gallery12,
-//   gallery13,
-//   gallery14,
-//   gallery15,
-//   gallery16,
-//   gallery10,
-//   gallery6,
-//   gallery8,
-// ];
+const PLOT_IMAGES = [
+  gallery7,
+  gallery9,
+  gallery12,
+  gallery13,
+  gallery14,
+  gallery15,
+  gallery16,
+  gallery10,
+  gallery6,
+  gallery8,
+];
 
-// const CONSTRUCTION_IMAGES = [
-//   gallery17,
-//   gallery18,
-//   gallery19,
-//   gallery20,
-//   gallery21,
-//   gallery22,
-//   gallery23,
-//   gallery24,
-//   gallery25,
-//   gallery26,
-//   gallery27,
-//   gallery28,
-//   gallery29,
-//   gallery30,
-//   gallery31,
-//   gallery32,
-//   gallery33,
-//   RecentImgfirst,
-//   RecentImgSecond,
-//   RecentImgThird,
-//   RecentImgFifth,
-//   RecentImgSixth,
-//   One,
-//   Two,
-//   Three,
-//   Four,
-//   Five,
-//   Six,
-//   Seven,
-//   Eight,
-//   Nine,
-//   ten,
-//   twelve,
-//   thirteen,
-// ];
+const CONSTRUCTION_IMAGES = [
+  gallery17,
+  gallery18,
+  gallery19,
+  gallery20,
+  gallery21,
+  gallery22,
+  gallery23,
+  gallery24,
+  gallery25,
+  gallery26,
+  gallery27,
+  gallery28,
+  gallery29,
+  gallery30,
+  gallery31,
+  gallery32,
+  gallery33,
+  RecentImgfirst,
+  RecentImgSecond,
+  RecentImgThird,
+  RecentImgFifth,
+  RecentImgSixth,
+  One,
+  Two,
+  Three,
+  Four,
+  Five,
+  Six,
+  Seven,
+  Eight,
+  Nine,
+  ten,
+  twelve,
+  thirteen,
+];
 
 
-//  Previously, These images are from DHS cloudinary account
-
-// const PLOT_IMAGES = [
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639273/gallery7_bexvwm.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639272/gallery16_frq83c.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639271/gallery11_ow4qtx.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639271/gallery12_u9hnst.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639271/gallery14_mckffv.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639270/gallery15_toeb5b.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746132/gallery9_puhau6.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639270/gallery13_qfvern.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639267/gallery6_im5oly.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639267/gallery10_vbwozd.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639267/gallery8_iqu4jd.jpg"
-// ].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
-
-// const CONSTRUCTION_IMAGES = [
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746133/gallery17_b7d2qk.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639985/gallery19_zw9syf.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746132/gallery18_hde4ve.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746131/gallery21_qscvwh.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746131/gallery23_yxdtok.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746128/gallery22_w6aouc.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746127/gallery20_otnnks.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746128/gallery25_dfgerz.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639982/gallery24_kmoggr.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746133/gallery26_x7hf5x.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746134/gallery27_a51vyw.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746131/gallery28_fy9kwe.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773746132/gallery29_flmc49.webp",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639273/thirdImage_b35fhs.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639272/second_image_sfeisi.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639272/imageSix_pikxhz.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639272/gallery33_xdkplp.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639272/gallery30_odtyij.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639272/gallery31_j4nviz.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639267/first_image_w1borf.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639266/forthImage_m6nxkt.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773639266/fifthImage_got46p.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726170/DSC04739_uwrhjp.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726199/four_cbyzhn.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726200/five_peaemw.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726205/nine_dfskgd.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726205/seven_ysaejw.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726205/eleven_eapooq.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726204/ten_iyeew0.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726207/eight_kh6y42.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726207/two_hn409p.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726206/three_rvj2rk.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726209/twelve_arc7zl.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726207/thirteen_vgk6xn.jpg",
-//   "https://res.cloudinary.com/dx7pz8dor/image/upload/v1773726220/six_ops4ev.jpg"
-
-// ].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
 
 // These images are from DES cloudinary account
-const PLOT_IMAGES = [
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859712/gallery8_cupcob.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859711/gallery15_aeynlu.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859710/gallery16_pzslbs.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859708/gallery13_ni14ln.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859707/gallery14_t224of.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859706/gallery12_jfo919.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859705/gallery7_gpe7s8.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859704/gallery9_xaa00q.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859703/gallery11_s0w2bj.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859700/gallery10_fu6jdi.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859699/gallery6_fgsymp.jpg"
-].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
+// const PLOT_IMAGES = [
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859712/gallery8_cupcob.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859711/gallery15_aeynlu.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859710/gallery16_pzslbs.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859708/gallery13_ni14ln.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859707/gallery14_t224of.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859706/gallery12_jfo919.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859705/gallery7_gpe7s8.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859704/gallery9_xaa00q.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859703/gallery11_s0w2bj.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859700/gallery10_fu6jdi.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859699/gallery6_fgsymp.jpg"
+// ].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
 
-const CONSTRUCTION_IMAGES =[
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723185/WhatsApp_Image_2026-06-06_at_10.34.35_AM_auotkx.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723185/WhatsApp_Image_2026-06-06_at_10.34.35_AM_2_q8wzza.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.35_AM_1_jjy25t.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.34_AM_y8gu63.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.33_AM_kiqqr0.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.34_AM_2_vq00xg.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.31_AM_sex0tx.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.32_AM_2_gszo9s.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.34_AM_1_peienw.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.33_AM_1_roghjx.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723182/WhatsApp_Image_2026-06-06_at_10.34.32_AM_bifhdc.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723182/WhatsApp_Image_2026-06-06_at_10.34.32_AM_1_oapsaa.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859706/thirdImage_ca7jfo.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859705/second_image_be65ku.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859704/imageSix_ju5pyq.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859703/gallery33_ltbxib.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859702/gallery32_alvyhs.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859701/gallery31_ksvrk6.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859700/gallery30_epcnck.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859698/first_image_bhwhvk.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859698/forthImage_rfhkk2.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859698/fifthImage_f00prr.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872184/four_anueh8.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872185/five_tazpk1.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872190/eight_i5euv5.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872193/nine_ehwqpa.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872194/eleven_j6vidm.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872195/DSC04739_mwc932.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872195/three_cgkdzx.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872196/two_xjshmw.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872197/ten_mvsais.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872201/six_shq4br.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872202/twelve_q9ffa6.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872203/thirteen_oqpdov.jpg",
-  "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872206/seven_gz03kq.jpg"
-].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
+// const CONSTRUCTION_IMAGES =[
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723185/WhatsApp_Image_2026-06-06_at_10.34.35_AM_auotkx.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723185/WhatsApp_Image_2026-06-06_at_10.34.35_AM_2_q8wzza.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.35_AM_1_jjy25t.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.34_AM_y8gu63.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.33_AM_kiqqr0.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.34_AM_2_vq00xg.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723184/WhatsApp_Image_2026-06-06_at_10.34.31_AM_sex0tx.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.32_AM_2_gszo9s.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.34_AM_1_peienw.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723183/WhatsApp_Image_2026-06-06_at_10.34.33_AM_1_roghjx.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723182/WhatsApp_Image_2026-06-06_at_10.34.32_AM_bifhdc.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1780723182/WhatsApp_Image_2026-06-06_at_10.34.32_AM_1_oapsaa.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859706/thirdImage_ca7jfo.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859705/second_image_be65ku.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859704/imageSix_ju5pyq.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859703/gallery33_ltbxib.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859702/gallery32_alvyhs.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859701/gallery31_ksvrk6.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859700/gallery30_epcnck.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859698/first_image_bhwhvk.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859698/forthImage_rfhkk2.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779859698/fifthImage_f00prr.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872184/four_anueh8.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872185/five_tazpk1.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872190/eight_i5euv5.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872193/nine_ehwqpa.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872194/eleven_j6vidm.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872195/DSC04739_mwc932.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872195/three_cgkdzx.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872196/two_xjshmw.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872197/ten_mvsais.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872201/six_shq4br.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872202/twelve_q9ffa6.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872203/thirteen_oqpdov.jpg",
+//   "https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779872206/seven_gz03kq.jpg"
+// ].map(url => url.replace('/image/upload/', '/image/upload/w_800,q_auto,f_auto/'));
 const CONSTRUCTION_VIDEOS =[
   "https://res.cloudinary.com/dxdgk4v3t/video/upload/v1780723183/WhatsApp_Video_2026-06-06_at_10.34.33_AM_oqu8ct.mp4",
   "https://res.cloudinary.com/dxdgk4v3t/video/upload/v1780723183/WhatsApp_Video_2026-06-06_at_10.34.32_AM_mmvl8d.mp4"
@@ -594,25 +540,26 @@ export default function App() {
           )}
         </AnimatePresence>
 {activeCategory === "construction" && (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    className="grid md:grid-cols-3 gap-6 mt-8"
-  >
-    {CONSTRUCTION_VIDEOS.map((src, idx) => (
-      <motion.div
-        key={idx}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: idx * 0.05 }}
-        className="rounded-xl overflow-hidden shadow hover:shadow-xl group"
-      >
-        <div className="relative aspect-[16/9] overflow-hidden">
-          <video src={src} controls className="w-full h-full object-cover" />
-        </div>
-      </motion.div>
-    ))}
-  </motion.div>
+  // <motion.div
+  //   initial={{ opacity: 0 }}
+  //   animate={{ opacity: 1 }}
+  //   className="grid md:grid-cols-3 gap-6 mt-8"
+  // >
+  //   {CONSTRUCTION_VIDEOS.map((src, idx) => (
+  //     <motion.div
+  //       key={idx}
+  //       initial={{ opacity: 0, y: 20 }}
+  //       animate={{ opacity: 1, y: 0 }}
+  //       transition={{ duration: 0.3, delay: idx * 0.05 }}
+  //       className="rounded-xl overflow-hidden shadow hover:shadow-xl group"
+  //     >
+  //       <div className="relative aspect-[16/9] overflow-hidden">
+  //         <video src={src} controls className="w-full h-full object-cover" />
+  //       </div>
+  //     </motion.div>
+  //   ))}
+  // </motion.div>
+  <></>
 )}
 
         {/* ----------------------- LOAD MORE ----------------------------- */}
