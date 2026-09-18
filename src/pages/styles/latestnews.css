@@ -3,11 +3,9 @@
 }
 
 .banner-latest {
-  /* this is the old image from DHS cloudinary */
-  /* background-image: url("https://res.cloudinary.com/dx7pz8dor/image/upload/v1773748205/HR-4_jpuawn.webp"); */
-
+  /* some changes */
   /* this is the latest image from DES cloudinary */
-  background-image: url("https://res.cloudinary.com/dxdgk4v3t/image/upload/v1779874405/HR-4_jpuawn_yytnfa.webp");
+  background-image: url("../../images/HR-4.webp");
   background-size: cover;
   background-position: center;
   color: white;
