@@ -53,6 +53,7 @@ import SlidingPopupContact from "./components/SlidingPopupContact/slidingPopupCo
 import ContactForm from "./pages/Tapasihalli/TapasihalliContact.jsx";
 import TermsAndConditions from "./pages/TermsAndCondtions.jsx";
 import CopyrightPolicy from "./pages/CopyrightPolicy.jsx";
+import BottomLeftVideoPlayer from "./components/FloatingVideo/BottomLeftVideoPlayer.jsx";
 
 import TopHeader from "./components/TopHeader.js";
 function ExternalRedirect({ to }) {
@@ -155,6 +156,7 @@ function MainApp() {
           
         <Footer />
         <ScrollToTopButton />
+        <FloatingVideoSelector />
       </div>
       {isGoogleAdsRoute && !formSubmitted && (
         <div className="global-contact-modal">
@@ -276,6 +278,32 @@ function PopupAdminSelector() {
   return shouldShowPopup ? (
     <SlidingPopupContact isGoogleAds={isGoogleAdsRoute} />
   ) : null;
+}
+
+function FloatingVideoSelector() {
+  const location = useLocation();
+
+  // Public marketing and informational routes where floating video player is displayed
+  const allowedRoutes = [
+    "/",
+    "/about-us",
+    "/projects/tapasihalli",
+    "/projects/marasandra",
+    "/gallery",
+    "/download/brochure",
+    "/download/application",
+    "/latest-news",
+    "/contact-us",
+    "/faq",
+    "/online_application",
+    "/privacy-policy",
+    "/terms-conditions",
+    "/copy-right-policy",
+  ];
+
+  const shouldShowVideo = allowedRoutes.includes(location.pathname);
+
+  return shouldShowVideo ? <BottomLeftVideoPlayer /> : null;
 }
 
 function NavBarSelector() {

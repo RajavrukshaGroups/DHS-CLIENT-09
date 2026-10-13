@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, Image as ImageIcon, HardHat, Camera, Sparkles } from "lucide-react";
 
- import Video from "../../videos/galleryjcb.mp4";
+ import Video from "../../images/galleryImages/Defence Habitat Tapasihalli1.mp4";
 import One from "../Project_Images/two.jpg";
  import Two from "../Project_Images/three.jpg";
 import Three from "../Project_Images/four.jpg";
