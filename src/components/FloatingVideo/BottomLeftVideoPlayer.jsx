@@ -1,4 +1,6 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+"use client";
+
+import React, { useState, useRef, useEffect } from "react";
 import {
   Play,
   Pause,
@@ -10,10 +12,13 @@ import {
   RotateCcw,
   Film,
 } from "lucide-react";
-import projectVideo from "../../images/galleryImages/Defence Habitat Tapasihalli1.mp4";
 import "./BottomLeftVideoPlayer.css";
+import projectVideo from "../../images/galleryImages/Defence Habitat Tapasihalli1.mp4";
 
 const BottomLeftVideoPlayer = () => {
+  // Mounting state to prevent Next.js SSR hydration mismatch
+  const [mounted, setMounted] = useState(false);
+
   // States
   const [isOpen, setIsOpen] = useState(true);
   const [isDismissed, setIsDismissed] = useState(false);
@@ -31,6 +36,10 @@ const BottomLeftVideoPlayer = () => {
   const progressRef = useRef(null);
   const controlsTimeoutRef = useRef(null);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Format seconds to mm:ss
   const formatTime = (timeInSeconds) => {
     if (isNaN(timeInSeconds) || timeInSeconds === null) return "0:00";
@@ -39,12 +48,12 @@ const BottomLeftVideoPlayer = () => {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
-  // Keep mini video playing on mount
+  // Keep mini video playing on mount / play state change
   useEffect(() => {
+    if (!mounted) return;
     const video = miniVideoRef.current;
     if (video && isOpen && !isFullView) {
       video.muted = isMuted;
-      video.currentTime = currentTime;
       if (isPlaying) {
         const playPromise = video.play();
         if (playPromise !== undefined) {
@@ -59,10 +68,11 @@ const BottomLeftVideoPlayer = () => {
         video.pause();
       }
     }
-  }, [isOpen, isFullView, isPlaying, isMuted]);
+  }, [mounted, isOpen, isFullView, isPlaying, isMuted]);
 
   // Synchronize time and state when switching between mini player and full view
   useEffect(() => {
+    if (!mounted) return;
     if (isFullView) {
       // Pause mini video
       if (miniVideoRef.current) {
@@ -92,7 +102,7 @@ const BottomLeftVideoPlayer = () => {
         }
       }
     }
-  }, [isFullView]);
+  }, [mounted, isFullView]);
 
   // Listen for Escape key to close Full View
   useEffect(() => {
@@ -125,7 +135,10 @@ const BottomLeftVideoPlayer = () => {
     if (!activeVideo) return;
 
     if (activeVideo.paused) {
-      activeVideo.play().then(() => setIsPlaying(true)).catch(() => {});
+      activeVideo
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
     } else {
       activeVideo.pause();
       setIsPlaying(false);
@@ -238,7 +251,7 @@ const BottomLeftVideoPlayer = () => {
     }, 2800);
   };
 
-  if (isDismissed) {
+  if (!mounted || isDismissed) {
     return null;
   }
 
@@ -277,34 +290,6 @@ const BottomLeftVideoPlayer = () => {
       {/* ------------------------------------------------------------------ */}
       {isOpen && !isFullView && (
         <div className="bottom-left-video-card shadow-2xl">
-          {/* Header Bar */}
-          <div className="video-card-header">
-            <div className="video-card-title-group">
-              <span className="live-dot" />
-              {/* <span className="video-project-tag">Tapasihalli Tour</span> */}
-              <span className="video-project-tag">Tapasihalli Phase 1 Video</span>
-            </div>
-
-            <div className="video-card-actions">
-              <button
-                className="card-action-btn fullview-btn"
-                onClick={openFullView}
-                title="Full View"
-                aria-label="Full View"
-              >
-                <Maximize2 size={14} />
-              </button>
-              <button
-                className="card-action-btn close-btn"
-                onClick={handleCloseMini}
-                title="Close"
-                aria-label="Close"
-              >
-                <X size={15} />
-              </button>
-            </div>
-          </div>
-
           {/* Video Preview Container */}
           <div
             className="video-preview-wrapper"
@@ -323,42 +308,27 @@ const BottomLeftVideoPlayer = () => {
               className="mini-video-element"
             />
 
-            {/* Subtle Gradient Overlays */}
+            {/* Hover-only Controls Overlay */}
             <div className="video-preview-overlay">
-              {/* Top Banner on Video */}
-              <div className="overlay-top">
-                {/* <span className="project-sub-tag">Defence Habitat</span> */}
-              </div>
-
-              {/* Bottom Quick Controls */}
               <div
-                className="overlay-bottom"
+                className="mini-hover-actions"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="quick-controls-left">
-                  <button
-                    className="quick-icon-btn"
-                    onClick={togglePlay}
-                    title={isPlaying ? "Pause" : "Play"}
-                  >
-                    {isPlaying ? <Pause size={14} /> : <Play size={14} />}
-                  </button>
-                  <button
-                    className="quick-icon-btn"
-                    onClick={toggleMute}
-                    title={isMuted ? "Unmute" : "Mute"}
-                  >
-                    {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
-                  </button>
-                </div>
-
                 <button
-                  className="quick-fullview-chip"
+                  className="mini-hover-btn fullview-btn"
                   onClick={openFullView}
-                  title="Expand to Full View"
+                  title="Full View"
+                  aria-label="Full View"
                 >
-                  <Maximize2 size={12} className="mr-1" />
-                  Full View
+                  <Maximize2 size={15} />
+                </button>
+                <button
+                  className="mini-hover-btn close-btn"
+                  onClick={handleCloseMini}
+                  title="Close"
+                  aria-label="Close"
+                >
+                  <X size={16} />
                 </button>
               </div>
             </div>
